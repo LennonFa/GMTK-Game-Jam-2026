@@ -557,11 +557,11 @@ Transform:
   m_GameObject: {fileID: 991940369}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1584665827}
+  m_Father: {fileID: 1168293618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &991940373
 MonoBehaviour:
@@ -732,6 +732,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026489914658ec14e90914e63bcb5556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Survivor
+--- !u!1 &1168293617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168293618}
+  m_Layer: 0
+  m_Name: CameraRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1168293618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168293617}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 991940372}
+  m_Father: {fileID: 1584665827}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1424460523
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +889,8 @@ GameObject:
   - component: {fileID: 1584665828}
   - component: {fileID: 1584665829}
   - component: {fileID: 1584665830}
+  - component: {fileID: 1584665831}
+  - component: {fileID: 1584665832}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -902,7 +936,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 991940372}
+  - {fileID: 1168293618}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1584665828
@@ -917,8 +951,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b055393c1221142ad8f7e0b077a2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
+  moveSpeed: 4
+  sprintSpeed: 6
   gravity: -20
+  acceleration: 30
+  deceleration: 37
+  jumpHeight: 1.3
 --- !u!114 &1584665829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,6 +985,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
   playerCamera: {fileID: 991940371}
   interactionDistance: 3
+--- !u!114 &1584665831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584665825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4c82a1e83335240a160f2b885693f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHeadbob
+  playerCamera: {fileID: 991940372}
+  walkFrequency: 10
+  sprintFrequency: 14
+  walkBobHeight: 0.05
+  sprintBobHeight: 0.075
+  bobSideAmount: 0.04
+  sprintSpeed: 6
+  bobSmoothingSpeed: 10
+--- !u!114 &1584665832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584665825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba4442f001b95b44b2c886922e495c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCrouch
+  cameraRoot: {fileID: 1168293618}
+  standingHeight: 1.8
+  crouchingHeight: 1.2
+  standingCameraHeight: 1.6
+  crouchingCameraHeight: 1
+  crouchSpeed: 4
 --- !u!1 &1964084067
 GameObject:
   m_ObjectHideFlags: 0

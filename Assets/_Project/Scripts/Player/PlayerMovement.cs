@@ -4,14 +4,22 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float sprintSpeed = 8f;
+    [SerializeField] private float crouchMoveSpeed = 2.5f;
     [SerializeField] private float gravity = -20f;
+    [SerializeField] private float acceleration = 20f;
+    [SerializeField] private float deceleration = 25f;
+    [SerializeField] private float jumpHeight = 1.5f;
 
+    private Vector3 currentHorizontalVelocity;
     private float verticalVelocity;
     private CharacterController characterController;
+    private PlayerCrouch playerCrouch;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        playerCrouch = GetComponent<PlayerCrouch>();
     }
 
     private void Update()
@@ -35,24 +43,60 @@ public class PlayerMovement : MonoBehaviour
         if (Keyboard.current.aKey.isPressed)
             input.x -= 1;
 
-        Vector3 moveDirection =
+        Vector3 inputDirection =
             transform.right * input.x +
             transform.forward * input.y;
 
-        moveDirection = moveDirection.normalized;
-        moveDirection.x *= moveSpeed;
-        moveDirection.z *= moveSpeed;
+        inputDirection = inputDirection.normalized;
+
+        bool isSprinting =
+            Keyboard.current.leftShiftKey.isPressed &&
+            !playerCrouch.IsCrouching;
+
+        float currentSpeed;
+
+        if (playerCrouch.IsCrouching)
+        {
+            currentSpeed = crouchMoveSpeed;
+        }
+        else if (isSprinting)
+        {
+            currentSpeed = sprintSpeed;
+        }
+        else
+        {
+            currentSpeed = moveSpeed;
+        }
+
+        Vector3 targetVelocity = inputDirection * currentSpeed;
+
+        float changeSpeed =
+            inputDirection == Vector3.zero ? deceleration : acceleration;
+
+        currentHorizontalVelocity = Vector3.MoveTowards(
+            currentHorizontalVelocity,
+            targetVelocity,
+            changeSpeed * Time.deltaTime
+        );
 
         if (characterController.isGrounded && verticalVelocity < 0)
         {
             verticalVelocity = -2f;
         }
 
-        verticalVelocity += gravity * Time.deltaTime;
-        moveDirection.y = verticalVelocity;
+        if (characterController.isGrounded &&
+            Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            verticalVelocity = Mathf.Sqrt(
+                jumpHeight * -2f * gravity
+            );
+        }
 
-        characterController.Move(
-            moveDirection * Time.deltaTime
-        );
+        verticalVelocity += gravity * Time.deltaTime;
+
+        Vector3 finalVelocity = currentHorizontalVelocity;
+        finalVelocity.y = verticalVelocity;
+
+        characterController.Move(finalVelocity * Time.deltaTime);
     }
 }

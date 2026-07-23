@@ -31,6 +31,7 @@ public class Lifeboat : MonoBehaviour, IInteractable
             var item = (Component)state.HeldItem;
             if (item.TryGetComponent<Survivor>(out var survivor))
             {
+                state.TakeHeld();
                 Seat(survivor.gameObject);
                 survivor.Rescue();
             }

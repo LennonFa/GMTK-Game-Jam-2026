@@ -1069,7 +1069,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1462,6 +1462,7 @@ GameObject:
   - component: {fileID: 1584665831}
   - component: {fileID: 1584665832}
   - component: {fileID: 1584665833}
+  - component: {fileID: 1584665834}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1609,6 +1610,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerState
   holdingPosition: {fileID: 124380881}
+--- !u!114 &1584665834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584665825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a9ca0a95354b21900993af69954d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerThrowing
+  playerCam: {fileID: 991940371}
+  maxThrowForce: 50
+  minThrowForce: 10
+  maxChargeTime: 2
+  projectilePrefab: {fileID: 3917921486402719968, guid: 8b6ec40b0959a6a49a7e0fcf2af083b4, type: 3}
 --- !u!1 &1792054279
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(PlayerCrouch))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
@@ -33,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Keyboard.current.wKey.isPressed)
             input.y += 1;
-        
+
         if (Keyboard.current.sKey.isPressed)
             input.y -= 1;
 

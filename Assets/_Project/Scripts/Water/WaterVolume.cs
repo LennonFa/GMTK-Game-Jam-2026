@@ -12,8 +12,7 @@ public class WaterVolume : MonoBehaviour
         if (playerOxygen == null)
             return;
 
-        bool isUnderwater = 
-            playerCamera.position.y < waterSurface.position.y;
+        bool isUnderwater = playerCamera.position.y < waterSurface.position.y;
 
         playerOxygen.SetUnderwater(isUnderwater);
     }
@@ -24,8 +23,7 @@ public class WaterVolume : MonoBehaviour
             return;
 
         playerOxygen = oxygen;
-        playerCamera = 
-            other.GetComponentInChildren<Camera>().transform;
+        playerCamera = other.GetComponentInChildren<Camera>().transform;
     }
 
     private void OnTriggerExit(Collider other)

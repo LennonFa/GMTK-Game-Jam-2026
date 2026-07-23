@@ -37,4 +37,22 @@ public class Lifeboat : MonoBehaviour, IInteractable
             }
         }
     }
+
+    public void CatchThrownPassenger(ThrownProjectile projectile)
+    {
+        if (isFull || projectile.payload == null)
+            return;
+
+        if (!projectile.payload.TryGetComponent(out Survivor survivor))
+        {
+            return;            
+        }
+
+        GameObject passenger = projectile.TakePayload();
+
+        Destroy(projectile.gameObject);
+
+        Seat(passenger);
+        survivor.Rescue();
+    }
 }

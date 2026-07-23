@@ -47,11 +47,7 @@ public class PlayerCrouch : MonoBehaviour
         float targetCameraHeight = 
             IsCrouching ? crouchingCameraHeight : standingCameraHeight;
 
-        characterController.height = Mathf.MoveTowards(
-            characterController.height,
-            targetHeight,
-            crouchSpeed * Time.deltaTime
-        );
+        characterController.height = Mathf.MoveTowards(characterController.height, targetHeight, crouchSpeed * Time.deltaTime);
 
         Vector3 controllerCenter = characterController.center;
         controllerCenter.y = characterController.height / 2f;
@@ -59,11 +55,7 @@ public class PlayerCrouch : MonoBehaviour
 
         Vector3 cameraPosition = cameraRoot.localPosition;
 
-        cameraPosition.y = Mathf.MoveTowards(
-            cameraPosition.y,
-            targetCameraHeight,
-            crouchSpeed * Time.deltaTime
-        );
+        cameraPosition.y = Mathf.MoveTowards(cameraPosition.y, targetCameraHeight, crouchSpeed * Time.deltaTime);
 
         cameraRoot.localPosition = cameraPosition;
     }

@@ -1,15 +1,22 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class ThrownProjectile : MonoBehaviour
 {
     public GameObject payload;
-    private float force;
-    private Vector3 velocity;
-    private bool isStrong;
-    [SerializeField] private float gravity;
-    [SerializeField] private float rotationSpeed = 360;
+    [SerializeField] private float rotationSpeed = 360f;
+    private Rigidbody rigidbodyComponent;
+    //private float force;
+    //private Vector3 velocity;
+    //private bool isStrong;
+    //[SerializeField] private float gravity;
 
+    private void Awake()
+    {
+        rigidbodyComponent = GetComponent<Rigidbody>();
+    }
+
+    /*
     void Update()
     {
         velocity.y -= gravity * Time.deltaTime;
@@ -19,6 +26,7 @@ public class ThrownProjectile : MonoBehaviour
         UpdateRotation();
     }
 
+    
     public void UpdateRotation()
     {
         // two different "animations" based on strength for fun
@@ -34,15 +42,35 @@ public class ThrownProjectile : MonoBehaviour
             rotation.eulerAngles = angles;
             transform.localRotation = rotation;
         }
-
     }
+    */
 
     public void Throw(Vector3 direction, float throwForce, bool strong)
     {
-        direction = direction.normalized;
-        force = throwForce;
-        velocity = force * direction;
-        isStrong = strong;
-        transform.rotation = Quaternion.LookRotation(velocity);
+        rigidbodyComponent.AddForce(direction.normalized * throwForce, ForceMode.VelocityChange);
+
+        Vector3 rotationAxis =
+            strong ? transform.right : transform.up;
+
+        float spinMultiplier = strong ? 2f : 1f;
+
+        rigidbodyComponent.angularVelocity = 
+            rotationAxis *
+            rotationSpeed *
+            spinMultiplier *
+            Mathf.Deg2Rad;
+    }
+
+    public GameObject TakePayload()
+    {
+        if (payload == null)
+            return null;
+
+        GameObject takenPayload = payload;
+        payload = null;
+
+        takenPayload.transform.SetParent(null, true);
+
+        return takenPayload;
     }
 }

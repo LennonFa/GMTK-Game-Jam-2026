@@ -1,8 +1,9 @@
-using System.Threading;
 using UnityEngine;
 
 public class PlayerHeadbob : MonoBehaviour
 {
+    [SerializeField] private bool _enable = true;
+
     [SerializeField] private Transform playerCamera;
     [SerializeField] private float walkFrequency = 10f;
     [SerializeField] private float sprintFrequency = 14f;
@@ -14,10 +15,14 @@ public class PlayerHeadbob : MonoBehaviour
     [SerializeField] private float sprintSpeed = 8f;
 
     [SerializeField] private float bobSmoothingSpeed = 10f;
+    [SerializeField] private float landingBobAmount = 0.12f;
+    [SerializeField] private float landingREcoverySpeed = 4f;
     
     private CharacterController characterController;
     private Vector3 cameraStartPosition;
     private float bobTimer;
+    private float landingOffset;
+    private bool wasGrounded;
 
     private void Awake()
     {
@@ -25,9 +30,17 @@ public class PlayerHeadbob : MonoBehaviour
         cameraStartPosition = playerCamera.localPosition;
     }
 
+    private void Start()
+    {
+        wasGrounded = characterController.isGrounded;
+    }
+
     private void Update()
     {
+        if (!_enable) return;
+
         HandleHeadbob();
+        HandleLanding();
     }
 
     private void HandleHeadbob()
@@ -40,6 +53,7 @@ public class PlayerHeadbob : MonoBehaviour
             characterController.isGrounded;
 
         Vector3 targetPosition = cameraStartPosition;
+        targetPosition.y += landingOffset;
 
         if (isMoving)
         {
@@ -76,5 +90,23 @@ public class PlayerHeadbob : MonoBehaviour
             targetPosition,
             bobSmoothingSpeed * Time.deltaTime
         );
+    }
+    
+    private void HandleLanding()
+    {
+        bool isGrounded = characterController.isGrounded;
+
+        if (!wasGrounded && isGrounded)
+        {
+            landingOffset = -landingBobAmount;
+        }
+
+        landingOffset = Mathf.MoveTowards(
+            landingOffset,
+            0f,
+            landingREcoverySpeed * Time.deltaTime
+        );
+
+        wasGrounded = isGrounded;
     }
 }

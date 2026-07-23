@@ -1626,7 +1626,7 @@ MonoBehaviour:
   maxThrowForce: 50
   minThrowForce: 10
   maxChargeTime: 2
-  projectilePrefab: {fileID: 3917921486402719968, guid: 8b6ec40b0959a6a49a7e0fcf2af083b4, type: 3}
+  projectilePrefab: {fileID: 4332654343002836538, guid: c1818c539893f1f40b65117d846edd12, type: 3}
 --- !u!1 &1792054279
 GameObject:
   m_ObjectHideFlags: 0

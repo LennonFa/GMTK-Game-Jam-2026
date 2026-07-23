@@ -26,7 +26,7 @@ public class ThrownProjectile : MonoBehaviour
         UpdateRotation();
     }
 
-    
+
     public void UpdateRotation()
     {
         // two different "animations" based on strength for fun
@@ -49,11 +49,11 @@ public class ThrownProjectile : MonoBehaviour
     {
         rigidbodyComponent.AddForce(direction.normalized * throwForce, ForceMode.VelocityChange);
 
-        Vector3 rotationAxis = strong ? transform.right : transform.up;
+        Vector3 rotationAxis = strong ? transform.forward : transform.up;
 
         float spinMultiplier = strong ? 2f : 1f;
 
-        rigidbodyComponent.angularVelocity = 
+        rigidbodyComponent.angularVelocity =
             rotationAxis *
             rotationSpeed *
             spinMultiplier *

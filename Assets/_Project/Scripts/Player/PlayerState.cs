@@ -5,6 +5,7 @@ public class PlayerState : MonoBehaviour
     //maybe add health and oxygen stuff here too
 
     public IHoldable HeldItem { get; set; }
+    public Transform holdingPosition;
 
     /// <summary>
     /// Removes held item from state and returns

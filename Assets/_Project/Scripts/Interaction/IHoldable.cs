@@ -2,6 +2,6 @@ using UnityEngine;
 
 public interface IHoldable
 {
-    void Hold(GameObject parent, Vector3 holdingPosition);
+    void Hold(GameObject parent, Transform holdingPosition);
     void Release();
 }

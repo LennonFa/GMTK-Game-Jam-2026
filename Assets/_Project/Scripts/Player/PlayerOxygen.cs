@@ -6,7 +6,14 @@ public class PlayerOxygen : MonoBehaviour
     [SerializeField] private float maxOxygen = 30f;
     [SerializeField] private float oxygenDrainPerSecond = 1f;
     [SerializeField] private float oxygenRefillPerSecond = 4f;
+    [SerializeField] private float lowOxygenThreshold = 0.25f;
 
+    public bool IsLowOnOxygen =>
+        OxygenNormalized <= lowOxygenThreshold;
+
+    public bool IsOutOfOxygen => 
+        CurrentOxygen <= 0f;
+    private bool lowOxygenWarningActive;
     private bool hasRunOut;
     public float OxygenNormalized =>
         maxOxygen <= 0f ? 0f : CurrentOxygen / maxOxygen;
@@ -38,15 +45,32 @@ public class PlayerOxygen : MonoBehaviour
             maxOxygen
         );
 
-        if (CurrentOxygen <= 0f && !hasRunOut)
+        if (IsOutOfOxygen && !hasRunOut)
         {
             hasRunOut = true;
             Debug.Log("Player has no oxygen left!");
         }
 
+        if (!IsOutOfOxygen)
+        {
+            hasRunOut = false;
+        }
+
         if (CurrentOxygen > 0f)
         {
             hasRunOut = false;
+        }
+
+        if (IsLowOnOxygen && !lowOxygenWarningActive)
+        {
+            lowOxygenWarningActive = true;
+            Debug.Log("Low oxygen!");
+        }
+
+        //Reset Warning
+        if (!IsLowOnOxygen)
+        {
+            lowOxygenWarningActive = false;
         }
     }
 

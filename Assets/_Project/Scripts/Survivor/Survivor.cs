@@ -47,10 +47,5 @@ public class Survivor : MonoBehaviour, IInteractable, IHoldable
     {
         isRescued = true;
     }
-
-    public void Rescue()
-    {
-        isRescued = true;
-    }
 }
 

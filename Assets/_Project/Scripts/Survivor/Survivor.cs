@@ -6,24 +6,8 @@ public class Survivor : MonoBehaviour, IInteractable, IHoldable
 {
     private bool isRescued;
     private bool isHeld;
-    private bool isThrown;
 
-    private Vector3 direction;
-
-    private void Update()
-    {
-        if (isThrown)
-        {
-            UpdatePosition();
-        }
-
-    }
-
-    private void UpdatePosition()
-    {
-
-
-    }
+    private Vector3 velocity;
 
     public void Interact(PlayerState state)
     {
@@ -57,7 +41,11 @@ public class Survivor : MonoBehaviour, IInteractable, IHoldable
     public void Release()
     {
         isHeld = false;
-        isThrown = true;
+    }
+
+    public void Rescue()
+    {
+        isRescued = true;
     }
 
     public void Rescue()

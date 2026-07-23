@@ -12,16 +12,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float acceleration = 20f;
     [SerializeField] private float deceleration = 25f;
     [SerializeField] private float jumpHeight = 1.5f;
+    [SerializeField] private float underwaterMoveSpeed = 3f;
 
     private Vector3 currentHorizontalVelocity;
     private float verticalVelocity;
     private CharacterController characterController;
     private PlayerCrouch playerCrouch;
+    private PlayerOxygen playerOxygen;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         playerCrouch = GetComponent<PlayerCrouch>();
+        playerOxygen = GetComponent<PlayerOxygen>();
     }
 
     private void Update()
@@ -53,13 +56,18 @@ public class PlayerMovement : MonoBehaviour
 
         bool isSprinting =
             Keyboard.current.leftShiftKey.isPressed &&
-            !playerCrouch.IsCrouching;
+            !playerCrouch.IsCrouching &&
+            !playerOxygen.IsUnderwater;
 
         float currentSpeed;
 
         if (playerCrouch.IsCrouching)
         {
             currentSpeed = crouchMoveSpeed;
+        }
+        else if (playerOxygen.IsUnderwater)
+        {
+            currentSpeed = underwaterMoveSpeed;
         }
         else if (isSprinting)
         {
@@ -87,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (characterController.isGrounded &&
+            !playerOxygen.IsUnderwater &&
             Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             verticalVelocity = Mathf.Sqrt(

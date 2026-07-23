@@ -30,6 +30,12 @@ public class Survivor : MonoBehaviour, IInteractable, IHoldable
         if (isHeld)
             return;
 
+        if (state.HeldItem != null)
+        {
+            Debug.Log($"can't grab {name}, player's hands full");
+            return;
+        }
+
         isHeld = true;
         state.HeldItem = this;
 
@@ -44,7 +50,7 @@ public class Survivor : MonoBehaviour, IInteractable, IHoldable
         gameObject.transform.SetParent(parent.transform);
         gameObject.transform.localPosition = holdingPosition;
 
-        //theres gotta be a better way to do this
+        //TODO: theres gotta be a better way to do this
         var rotation = gameObject.transform.rotation;
         var angles = rotation.eulerAngles;
         angles.x = 90;

@@ -271,7 +271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 124380881}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HoldingPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1579,7 +1579,7 @@ GameObject:
   - component: {fileID: 991940371}
   - component: {fileID: 991940370}
   - component: {fileID: 991940373}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1654,7 +1654,7 @@ Transform:
   m_GameObject: {fileID: 991940369}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.15}
+  m_LocalPosition: {x: 0, y: 0, z: -0.157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1910,7 +1910,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1168293618}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CameraRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2206,7 +2206,7 @@ GameObject:
   - component: {fileID: 1584665833}
   - component: {fileID: 1584665834}
   - component: {fileID: 1584665835}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2942,7 +2942,7 @@ Transform:
   m_GameObject: {fileID: 2012241589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.75, y: 0.634, z: 4}
+  m_LocalPosition: {x: 18.21, y: 0.634, z: 4}
   m_LocalScale: {x: 0.6088532, y: 1.1748949, z: 0.35474}
   m_ConstrainProportionsScale: 0
   m_Children: []

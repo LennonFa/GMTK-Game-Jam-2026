@@ -1,0 +1,22 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/PauseMenu/PauseStyles.uss?fileID=7433441132597879392&amp;guid=faf3f30ac2bdaa343b53cbe29b2cccda&amp;type=3#PauseStyles"/>
+    <ui:VisualElement name="PauseBackground" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.416); justify-content: center; align-items: center; align-content: center; flex-direction: column;">
+        <ui:VisualElement name="ButtonsContainer" style="flex-grow: 0; height: 50%; width: 50%; flex-basis: auto; justify-content: space-evenly;">
+            <ui:Button text="" icon-image="" name="Resume" style="background-image: none; background-color: rgba(255, 255, 255, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;">
+                <ui:Image source="project://database/Assets/_Project/UI/HUD/Sprites/Resume1.png?fileID=2800000&amp;guid=82993c024150e084086e208210551414&amp;type=3#Resume1" name="ResumeImage">
+                    <ui:Label text="Resume" name="ResumeText" style="height: 48px; width: 200px; font-size: 28px;"/>
+                </ui:Image>
+            </ui:Button>
+            <ui:Button text="" icon-image="" name="Restart" style="background-image: none; background-color: rgba(255, 255, 255, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;">
+                <ui:Image source="project://database/Assets/_Project/UI/HUD/Sprites/Restart1.png?fileID=2800000&amp;guid=9a2f654246accc446904d488cdef5e08&amp;type=3#Restart1" name="RestartImage">
+                    <ui:Label text="Restart" name="RestartText" style="height: 48px; width: 200px; font-size: 28px;"/>
+                </ui:Image>
+            </ui:Button>
+            <ui:Button text="" icon-image="" name="Quit" style="background-image: none; background-color: rgba(255, 255, 255, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;">
+                <ui:Image source="project://database/Assets/_Project/UI/HUD/Sprites/Quit1.png?fileID=2800000&amp;guid=900845e31cb918240a69b329740dc72f&amp;type=3#Quit1" name="QuitImage">
+                    <ui:Label text="Quit" name="QuitText" style="height: 48px; width: 200px; font-size: 28px;"/>
+                </ui:Image>
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -7,6 +7,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float interactionDistance = 3f;
+    [SerializeField] private GameObject interactionPrompt;
 
     private PlayerState playerState; // interaction might depend on state
 
@@ -18,27 +19,36 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame)
+        bool foundInteractable = 
+            TryGetInteractable(out IInteractable interactable);
+
+        interactionPrompt.SetActive(foundInteractable);
+
+        if (foundInteractable &&
+            Keyboard.current.eKey.wasPressedThisFrame)
         {
-            TryInteract();
+            interactable.Interact(playerState);
         }
     }
-    private void TryInteract()
+    private bool TryGetInteractable(out IInteractable interactable)
     {
         Ray ray = new Ray(
             playerCamera.transform.position,
             playerCamera.transform.forward
         );
 
-        if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
+        if (Physics.Raycast(    
+            ray,    
+            out RaycastHit hit,
+            interactionDistance))
         {
-            IInteractable interactable =
+            interactable =
                 hit.collider.GetComponentInParent<IInteractable>();
 
-            if (interactable != null)
-            {
-                interactable.Interact(playerState);
-            }
+            return interactable != null;
         }
+
+        interactable = null;
+        return false;
     }
 }

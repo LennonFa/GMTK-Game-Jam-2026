@@ -1,0 +1,9 @@
+:root {
+}
+
+
+
+Image {
+    align-items: center;
+    align-content: center;
+}

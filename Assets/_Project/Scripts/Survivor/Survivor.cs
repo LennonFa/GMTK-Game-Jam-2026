@@ -64,9 +64,18 @@ public class Survivor : MonoBehaviour, IInteractable, IHoldable
         isRescued = true;
         isHeld = false;
 
-        foreach (Collider passengerCollider in GetComponentsInChildren<Collider>())
+        int ignoreRaycastLayer = LayerMask.NameToLayer("Ignore Raycast");
+
+        SetLayerRecursively(gameObject, ignoreRaycastLayer);
+    }
+
+    private void SetLayerRecursively(GameObject target, int layer)
+    {
+        target.layer = layer;
+
+        foreach (Transform child in target.transform)
         {
-            passengerCollider.enabled = false;
+            SetLayerRecursively(child.gameObject, layer);
         }
     }
 }

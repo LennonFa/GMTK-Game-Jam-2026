@@ -31,8 +31,7 @@ public class PlayerCrouch : MonoBehaviour
 
     private void HandleCrouch()
     {
-        bool crouchInput = 
-            Keyboard.current.leftCtrlKey.isPressed;
+        bool crouchInput = Keyboard.current.leftCtrlKey.isPressed;
 
         if (!crouchInput && IsCrouching && !CanStandUp())
         {
@@ -41,11 +40,9 @@ public class PlayerCrouch : MonoBehaviour
 
         IsCrouching = crouchInput;
 
-        float targetHeight = 
-            IsCrouching ? crouchingHeight : standingHeight;
+        float targetHeight = IsCrouching ? crouchingHeight : standingHeight;
 
-        float targetCameraHeight = 
-            IsCrouching ? crouchingCameraHeight : standingCameraHeight;
+        float targetCameraHeight = IsCrouching ? crouchingCameraHeight : standingCameraHeight;
 
         characterController.height = Mathf.MoveTowards(characterController.height, targetHeight, crouchSpeed * Time.deltaTime);
 
@@ -62,18 +59,14 @@ public class PlayerCrouch : MonoBehaviour
 
     private bool CanStandUp()
     {
-        float checkRadius = 
-            characterController.radius * 0.9f;
+        float checkRadius = characterController.radius * 0.9f;
 
-        float distanceToStanding =
-            standingHeight - characterController.height;
+        float distanceToStanding = standingHeight - characterController.height;
 
         if (distanceToStanding <= 0f)
             return true;
 
-        Vector3 checkStart =
-            transform.position + 
-            Vector3.up * (characterController.height - checkRadius);
+        Vector3 checkStart = transform.position + Vector3.up * (characterController.height - checkRadius);
 
         bool ceilingDetected = Physics.SphereCast(
             checkStart,

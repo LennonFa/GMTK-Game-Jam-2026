@@ -19,14 +19,12 @@ public class PlayerLook : MonoBehaviour
         if (Mouse.current == null)
             return;
 
-        Vector2 mouseDelta =
-            Mouse.current.delta.ReadValue() * mouseSensitivity;
+        Vector2 mouseDelta = Mouse.current.delta.ReadValue() * mouseSensitivity;
 
         verticalRotation -= mouseDelta.y;
         verticalRotation = Mathf.Clamp(verticalRotation, -85f, 85f);
 
-        playerCamera.localRotation = 
-            Quaternion.Euler(verticalRotation, 0f, 0f);
+        playerCamera.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
 
         transform.Rotate(Vector3.up * mouseDelta.x);
     }

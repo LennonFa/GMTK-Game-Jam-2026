@@ -48,16 +48,11 @@ public class PlayerMovement : MonoBehaviour
         if (Keyboard.current.aKey.isPressed)
             input.x -= 1;
 
-        Vector3 inputDirection =
-            transform.right * input.x +
-            transform.forward * input.y;
+        Vector3 inputDirection = transform.right * input.x + transform.forward * input.y;
 
         inputDirection = inputDirection.normalized;
 
-        bool isSprinting =
-            Keyboard.current.leftShiftKey.isPressed &&
-            !playerCrouch.IsCrouching &&
-            !playerOxygen.IsUnderwater;
+        bool isSprinting = Keyboard.current.leftShiftKey.isPressed && !playerCrouch.IsCrouching && !playerOxygen.IsUnderwater;
 
         float currentSpeed;
 
@@ -80,27 +75,18 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 targetVelocity = inputDirection * currentSpeed;
 
-        float changeSpeed =
-            inputDirection == Vector3.zero ? deceleration : acceleration;
+        float changeSpeed = inputDirection == Vector3.zero ? deceleration : acceleration;
 
-        currentHorizontalVelocity = Vector3.MoveTowards(
-            currentHorizontalVelocity,
-            targetVelocity,
-            changeSpeed * Time.deltaTime
-        );
+        currentHorizontalVelocity = Vector3.MoveTowards(currentHorizontalVelocity, targetVelocity, changeSpeed * Time.deltaTime);
 
         if (characterController.isGrounded && verticalVelocity < 0)
         {
             verticalVelocity = -2f;
         }
 
-        if (characterController.isGrounded &&
-            !playerOxygen.IsUnderwater &&
-            Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (characterController.isGrounded && !playerOxygen.IsUnderwater && Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            verticalVelocity = Mathf.Sqrt(
-                jumpHeight * -2f * gravity
-            );
+            verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
         verticalVelocity += gravity * Time.deltaTime;

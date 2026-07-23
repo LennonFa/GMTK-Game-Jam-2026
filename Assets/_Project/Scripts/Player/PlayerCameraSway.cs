@@ -21,16 +21,8 @@ public class PlayerCameraSway : MonoBehaviour
         
         float targetZRotation = -horizontalInput * swayAngle;
 
-        Quaternion targetRotation = Quaternion.Euler(
-            0f,
-            0f,
-            targetZRotation
-        );
+        Quaternion targetRotation = Quaternion.Euler(0f, 0f, targetZRotation);
 
-        cameraRoot.localRotation = Quaternion.Lerp(
-            cameraRoot.localRotation,
-            targetRotation,
-            swaySpeed * Time.deltaTime
-        );
+        cameraRoot.localRotation = Quaternion.Lerp(cameraRoot.localRotation, targetRotation, swaySpeed * Time.deltaTime);
     }
 }

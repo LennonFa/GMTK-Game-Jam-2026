@@ -40,11 +40,7 @@ public class PlayerOxygen : MonoBehaviour
             CurrentOxygen += oxygenRefillPerSecond * Time.deltaTime;
         }
 
-        CurrentOxygen = Mathf.Clamp(
-            CurrentOxygen,
-            0f,
-            maxOxygen
-        );
+        CurrentOxygen = Mathf.Clamp(CurrentOxygen, 0f, maxOxygen);
 
         if (IsOutOfOxygen && !hasRunOut)
         {

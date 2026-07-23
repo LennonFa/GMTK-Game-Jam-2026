@@ -49,8 +49,7 @@ public class ThrownProjectile : MonoBehaviour
     {
         rigidbodyComponent.AddForce(direction.normalized * throwForce, ForceMode.VelocityChange);
 
-        Vector3 rotationAxis =
-            strong ? transform.right : transform.up;
+        Vector3 rotationAxis = strong ? transform.right : transform.up;
 
         float spinMultiplier = strong ? 2f : 1f;
 

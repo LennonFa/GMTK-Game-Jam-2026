@@ -48,48 +48,33 @@ public class PlayerHeadbob : MonoBehaviour
         Vector3 horizontalVelocity = characterController.velocity;
         horizontalVelocity.y = 0f;
 
-        bool isMoving = 
-            horizontalVelocity.magnitude > 0.1f &&
-            characterController.isGrounded;
+        bool isMoving = horizontalVelocity.magnitude > 0.1f && characterController.isGrounded;
 
         Vector3 targetPosition = cameraStartPosition;
         targetPosition.y += landingOffset;
 
         if (isMoving)
         {
-            float speedPercentage =
-                Mathf.Clamp01(horizontalVelocity.magnitude / sprintSpeed);
+            float speedPercentage = Mathf.Clamp01(horizontalVelocity.magnitude / sprintSpeed);
 
-            float currentFrequency = 
-                Mathf.Lerp(walkFrequency, sprintFrequency, speedPercentage);
+            float currentFrequency = Mathf.Lerp(walkFrequency, sprintFrequency, speedPercentage);
 
-            float currentBobHeight = 
-                Mathf.Lerp(walkBobHeight, sprintBobHeight, speedPercentage);
+            float currentBobHeight = Mathf.Lerp(walkBobHeight, sprintBobHeight, speedPercentage);
 
             bobTimer += Time.deltaTime * currentFrequency;
 
-            float verticalOffset =
-                Mathf.Sin(bobTimer) * currentBobHeight;
+            float verticalOffset = Mathf.Sin(bobTimer) * currentBobHeight;
 
-            float horizontalOffset = 
-                Mathf.Sin(bobTimer * 0.5f) * bobSideAmount;
+            float horizontalOffset = Mathf.Sin(bobTimer * 0.5f) * bobSideAmount;
 
-            targetPosition += new Vector3(
-                horizontalOffset,
-                verticalOffset,
-                0f
-            );
+            targetPosition += new Vector3(horizontalOffset, verticalOffset, 0f);
         }
         else
         {
             bobTimer = 0f;
         }
 
-        playerCamera.localPosition = Vector3.Lerp(
-            playerCamera.localPosition,
-            targetPosition,
-            bobSmoothingSpeed * Time.deltaTime
-        );
+        playerCamera.localPosition = Vector3.Lerp(playerCamera.localPosition, targetPosition, bobSmoothingSpeed * Time.deltaTime);
     }
     
     private void HandleLanding()
@@ -101,11 +86,7 @@ public class PlayerHeadbob : MonoBehaviour
             landingOffset = -landingBobAmount;
         }
 
-        landingOffset = Mathf.MoveTowards(
-            landingOffset,
-            0f,
-            landingREcoverySpeed * Time.deltaTime
-        );
+        landingOffset = Mathf.MoveTowards(landingOffset, 0f, landingREcoverySpeed * Time.deltaTime);
 
         wasGrounded = isGrounded;
     }

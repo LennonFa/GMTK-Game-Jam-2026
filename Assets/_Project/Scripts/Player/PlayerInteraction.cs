@@ -19,31 +19,22 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        bool foundInteractable = 
-            TryGetInteractable(out IInteractable interactable);
+        bool foundInteractable = TryGetInteractable(out IInteractable interactable);
 
         interactionPrompt.SetActive(foundInteractable);
 
-        if (foundInteractable &&
-            Keyboard.current.eKey.wasPressedThisFrame)
+        if (foundInteractable && Keyboard.current.eKey.wasPressedThisFrame)
         {
             interactable.Interact(playerState);
         }
     }
     private bool TryGetInteractable(out IInteractable interactable)
     {
-        Ray ray = new Ray(
-            playerCamera.transform.position,
-            playerCamera.transform.forward
-        );
+        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
 
-        if (Physics.Raycast(    
-            ray,    
-            out RaycastHit hit,
-            interactionDistance))
+        if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
         {
-            interactable =
-                hit.collider.GetComponentInParent<IInteractable>();
+            interactable = hit.collider.GetComponentInParent<IInteractable>();
 
             return interactable != null;
         }

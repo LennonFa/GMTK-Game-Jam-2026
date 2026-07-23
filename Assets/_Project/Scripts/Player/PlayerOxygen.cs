@@ -8,6 +8,9 @@ public class PlayerOxygen : MonoBehaviour
     [SerializeField] private float oxygenRefillPerSecond = 4f;
 
     private bool hasRunOut;
+    public float OxygenNormalized =>
+        maxOxygen <= 0f ? 0f : CurrentOxygen / maxOxygen;
+
     public float CurrentOxygen { get; private set; }
     public bool IsUnderwater { get; private set; }
 

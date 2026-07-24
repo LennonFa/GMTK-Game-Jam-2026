@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(PlayerCrouch))]
+[RequireComponent(typeof(PlayerWaterState))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
@@ -14,17 +15,30 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpHeight = 1.5f;
     [SerializeField] private float underwaterMoveSpeed = 3f;
 
+    [Header("Wading")] //Waterlevels until... 
+    [SerializeField] private float wadeSlowStartImmersion = 0.15f;
+
+    [Range(0f, 1f)]
+    [SerializeField] private float deepWadeSpeedMultiplier = 0.5f;
+
+    [Range(0f, 1f)]
+    [SerializeField] private float sprintDisableImmersion = 0.35f;
+
+    [Range(0f, 1f)]
+    [SerializeField] private float jumpDisableImmersion = 0.45f;
+    // ...
+
     private Vector3 currentHorizontalVelocity;
     private float verticalVelocity;
     private CharacterController characterController;
     private PlayerCrouch playerCrouch;
-    private PlayerOxygen playerOxygen;
+    private PlayerWaterState playerWaterState;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         playerCrouch = GetComponent<PlayerCrouch>();
-        playerOxygen = GetComponent<PlayerOxygen>();
+        playerWaterState = GetComponent<PlayerWaterState>();
     }
 
     private void Update()
@@ -52,17 +66,32 @@ public class PlayerMovement : MonoBehaviour
 
         inputDirection = inputDirection.normalized;
 
-        bool isSprinting = Keyboard.current.leftShiftKey.isPressed && !playerCrouch.IsCrouching && !playerOxygen.IsUnderwater;
+        WaterMovementState waterState = playerWaterState.CurrentState;
+
+        bool isWading = waterState == WaterMovementState.Wading;
+
+        bool isSwimming = waterState == WaterMovementState.SurfaceSwimming || waterState == WaterMovementState.Diving;
+
+        float wadeAmount = 0f; 
+
+        if (isWading)
+        {
+            wadeAmount = Mathf.InverseLerp( //wadeAmount between 0 and 1;   0 = no resistance
+                wadeSlowStartImmersion,
+                playerWaterState.SwimEnterImmersion,
+                playerWaterState.Immersion
+            );
+        }
+
+        bool canSprint = !playerCrouch.IsCrouching && !isSwimming && (!isWading || playerWaterState.Immersion < sprintDisableImmersion);
+
+        bool isSprinting = Keyboard.current.leftShiftKey.isPressed && canSprint;
 
         float currentSpeed;
 
         if (playerCrouch.IsCrouching)
         {
             currentSpeed = crouchMoveSpeed;
-        }
-        else if (playerOxygen.IsUnderwater)
-        {
-            currentSpeed = underwaterMoveSpeed;
         }
         else if (isSprinting)
         {
@@ -71,6 +100,17 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             currentSpeed = moveSpeed;
+        }
+
+        if (isWading)
+        {
+            float speedMultiplier = Mathf.Lerp(
+                1f,
+                deepWadeSpeedMultiplier,
+                wadeAmount
+            );
+
+            currentSpeed *= speedMultiplier;
         }
 
         Vector3 targetVelocity = inputDirection * currentSpeed;
@@ -84,7 +124,9 @@ public class PlayerMovement : MonoBehaviour
             verticalVelocity = -2f;
         }
 
-        if (characterController.isGrounded && !playerOxygen.IsUnderwater && Keyboard.current.spaceKey.wasPressedThisFrame)
+        bool canJump = !isSwimming && (!isWading || playerWaterState.Immersion < jumpDisableImmersion);
+
+        if (characterController.isGrounded && canJump && Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }

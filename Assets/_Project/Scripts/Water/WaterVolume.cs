@@ -19,6 +19,11 @@ public class WaterVolume : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.TryGetComponent(out PlayerWaterState waterState))
+        {
+            waterState.EnterWater(waterSurface);
+        }
+
         if (!other.TryGetComponent(out PlayerOxygen oxygen))
             return;
 
@@ -28,6 +33,11 @@ public class WaterVolume : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.TryGetComponent(out PlayerWaterState waterState))
+        {
+            waterState.ExitWater(waterSurface);
+        }
+        
         if (!other.TryGetComponent(out PlayerOxygen oxygen))
             return;
 

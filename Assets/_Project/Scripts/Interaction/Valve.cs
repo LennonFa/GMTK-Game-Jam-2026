@@ -15,12 +15,20 @@ public class Valve : MonoBehaviour, IInteractable
         if (isActivated)
             return;
 
-        AudioManager.instance.PlayOneShot(openSound, this.transform.position);
         isActivated = true;
 
         Debug.Log(gameObject.name + " activated!");
 
         onActivated.Invoke();
+
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayOneShot(openSound, transform.position);
+        }
+        else
+        {
+            Debug.LogWarning("NoAudioManager found. valve sound skipped.");
+        }
     }
 }
   

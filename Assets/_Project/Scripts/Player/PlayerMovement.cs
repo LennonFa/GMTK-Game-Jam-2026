@@ -28,6 +28,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpDisableImmersion = 0.45f;
     // ...
 
+    [Header("Swimming")]
+    [SerializeField] private float surfaceSwimSpeed = 3.5f;
+    [SerializeField] private float swimAcceleration = 8;
+
+    [SerializeField] private float surfaceHeadHeight = 0.12f;
+    [SerializeField] private float surfaceBuoyancyStrength = 6f;
+
+    [SerializeField] private float swimVerticalAcceleration = 8f;
+    [SerializeField] private float maxSwimVerticalSpeed = 2f;
+    [SerializeField] private float passiveBuoyancySpeed = 0.25f;
+
     private Vector3 currentHorizontalVelocity;
     private float verticalVelocity;
     private CharacterController characterController;
@@ -87,9 +98,19 @@ public class PlayerMovement : MonoBehaviour
 
         bool isSprinting = Keyboard.current.leftShiftKey.isPressed && canSprint;
 
-        float currentSpeed;
 
-        if (playerCrouch.IsCrouching)
+        //set movespeed
+        float currentSpeed; 
+
+        if (waterState == WaterMovementState.SurfaceSwimming)
+        {
+            currentSpeed = surfaceSwimSpeed;
+        }
+        else if (waterState == WaterMovementState.Diving)
+        {
+            currentSpeed = underwaterMoveSpeed;
+        }
+        else if (playerCrouch.IsCrouching)
         {
             currentSpeed = crouchMoveSpeed;
         }
@@ -102,40 +123,87 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = moveSpeed;
         }
 
-        if (isWading)
-        {
-            float speedMultiplier = Mathf.Lerp(
-                1f,
-                deepWadeSpeedMultiplier,
-                wadeAmount
-            );
-
-            currentSpeed *= speedMultiplier;
-        }
+        
 
         Vector3 targetVelocity = inputDirection * currentSpeed;
 
-        float changeSpeed = inputDirection == Vector3.zero ? deceleration : acceleration;
+
+        float changeSpeed;
+
+        if (isSwimming)
+        {
+            changeSpeed = swimAcceleration;
+        }
+        else
+        {
+            changeSpeed = inputDirection == Vector3.zero ? deceleration : acceleration;
+        }
 
         currentHorizontalVelocity = Vector3.MoveTowards(currentHorizontalVelocity, targetVelocity, changeSpeed * Time.deltaTime);
 
-        if (characterController.isGrounded && verticalVelocity < 0)
+        
+        if (isSwimming)
         {
-            verticalVelocity = -2f;
+            HandleSwimmingVerticalMovement(waterState);
         }
-
-        bool canJump = !isSwimming && (!isWading || playerWaterState.Immersion < jumpDisableImmersion);
-
-        if (characterController.isGrounded && canJump && Keyboard.current.spaceKey.wasPressedThisFrame)
+        else
         {
-            verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
+            if (characterController.isGrounded && verticalVelocity < 0f)
+            {
+                verticalVelocity = -2f;
+            }
 
-        verticalVelocity += gravity * Time.deltaTime;
+            bool canJump = !isWading || playerWaterState.Immersion < jumpDisableImmersion;
+
+            if (characterController.isGrounded && canJump && Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }
+
+            verticalVelocity += gravity * Time.deltaTime;
+        }
 
         Vector3 finalVelocity = currentHorizontalVelocity;
         finalVelocity.y = verticalVelocity;
 
         characterController.Move(finalVelocity * Time.deltaTime);
+    }
+
+    private void HandleSwimmingVerticalMovement(WaterMovementState waterState)
+    {
+        bool wantsToRise = Keyboard.current.spaceKey.isPressed;
+
+        bool wantsToDive = Keyboard.current.leftCtrlKey.isPressed;
+
+        float targetVerticalVelocity;
+
+        if (waterState == WaterMovementState.SurfaceSwimming && !wantsToDive)
+        {
+            float targetHeadDepth = -surfaceHeadHeight;
+            float depthError = playerWaterState.HeadDepth - targetHeadDepth;
+
+            targetVerticalVelocity = Mathf.Clamp(depthError *surfaceBuoyancyStrength, -maxSwimVerticalSpeed, maxSwimVerticalSpeed);
+        }
+        else
+        {
+            float verticalInput = 0f;
+
+            if (wantsToRise)
+                verticalInput += 1f;
+
+            if (wantsToDive)
+                verticalInput -= 1f;
+
+            if (verticalInput == 0f)
+            {
+                targetVerticalVelocity = passiveBuoyancySpeed;
+            }
+            else
+            {
+                targetVerticalVelocity = verticalInput * maxSwimVerticalSpeed;
+            }
+        }
+        
+        verticalVelocity = Mathf.MoveTowards(verticalVelocity, targetVerticalVelocity, swimVerticalAcceleration * Time.deltaTime);
     }
 }

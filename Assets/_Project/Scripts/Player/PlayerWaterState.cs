@@ -98,6 +98,18 @@ public class PlayerWaterState : MonoBehaviour
             return;
         }
 
+        bool wasSwimming = CurrentState == WaterMovementState.SurfaceSwimming || CurrentState == WaterMovementState.Diving;
+
+        float requiredImmersion = wasSwimming ? swimExitImmersion : swimEnterImmersion;
+
+        bool shouldSwim = Immersion >= requiredImmersion;
+
+        if (!shouldSwim)
+        {
+            SetState(WaterMovementState.Wading);
+            return;
+        }
+
         bool shouldDive;
 
         if (CurrentState == WaterMovementState.Diving)
@@ -109,24 +121,7 @@ public class PlayerWaterState : MonoBehaviour
             shouldDive = HeadDepth > diveEnterDepth;
         }
 
-        if (shouldDive)
-        {
-            SetState(WaterMovementState.Diving);
-            return;
-        }
-
-        bool shouldSwim;
-
-        if (CurrentState == WaterMovementState.SurfaceSwimming)
-        {
-            shouldSwim = Immersion >= swimExitImmersion;
-        }
-        else
-        {
-            shouldSwim = Immersion >= swimEnterImmersion;
-        }
-
-        SetState(shouldSwim ? WaterMovementState.SurfaceSwimming : WaterMovementState.Wading);
+        SetState(shouldDive ? WaterMovementState.Diving : WaterMovementState.SurfaceSwimming);
     }
 
     private void SetState(WaterMovementState newState)

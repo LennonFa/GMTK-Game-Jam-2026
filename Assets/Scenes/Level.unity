@@ -1321,6 +1321,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4741966316236894604, guid: 9efa573a06adc0e43820eec65bc03ef6, type: 3}
   m_PrefabInstance: {fileID: 1435666418}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1671331636 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3193590992133512013, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
+  m_PrefabInstance: {fileID: 1808535254}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1737098216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1430,6 +1435,10 @@ PrefabInstance:
       propertyPath: UICanvas
       value: 
       objectReference: {fileID: 1351977236}
+    - target: {fileID: 2165668469641966070, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1671331636}
     - target: {fileID: 5925160710146016957, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
       propertyPath: interactionPrompt
       value: 

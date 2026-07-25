@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9d358c529069ce4bb3ddf0cb715f5d2, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerOcygen
 --- !u!1001 &162931514
 PrefabInstance:
@@ -196,19 +196,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7465109666676694265, guid: 6c5b41677865ef54baf61b8e7e8ff8af, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 61e1a5e6cb89852408179a2b13e86dab, type: 2}
     - target: {fileID: -6334028245890258531, guid: 6c5b41677865ef54baf61b8e7e8ff8af, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 61e1a5e6cb89852408179a2b13e86dab, type: 2}
     - target: {fileID: -6067185528594298527, guid: 6c5b41677865ef54baf61b8e7e8ff8af, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 61e1a5e6cb89852408179a2b13e86dab, type: 2}
     - target: {fileID: -425565630206218756, guid: 6c5b41677865ef54baf61b8e7e8ff8af, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 61e1a5e6cb89852408179a2b13e86dab, type: 2}
     - target: {fileID: 919132149155446097, guid: 6c5b41677865ef54baf61b8e7e8ff8af, type: 3}
       propertyPath: m_Name
@@ -216,15 +216,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2464528397892454471, guid: 6c5b41677865ef54baf61b8e7e8ff8af, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 61e1a5e6cb89852408179a2b13e86dab, type: 2}
     - target: {fileID: 3566390031902043909, guid: 6c5b41677865ef54baf61b8e7e8ff8af, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 61e1a5e6cb89852408179a2b13e86dab, type: 2}
     - target: {fileID: 7291382140701123251, guid: 6c5b41677865ef54baf61b8e7e8ff8af, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 61e1a5e6cb89852408179a2b13e86dab, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -477,7 +477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7257276858288706127, guid: 2f5fc260cec9196409e23e8fe1faacea, type: 3}
       propertyPath: successVFX
-      value:
+      value: 
       objectReference: {fileID: 870626304796344502, guid: 4c6054a7e778d1e4aa156cf9b3c9557e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -921,7 +921,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
@@ -1042,7 +1042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8664626268934203330, guid: c1a6d0464f402894aac113a9b4b048f6, type: 3}
       propertyPath: playerOxygen
-      value:
+      value: 
       objectReference: {fileID: 131885161}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1354,7 +1354,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc766cf507a79bd48b7652eeda4d337e, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterVolume
   waterSurface: {fileID: 2065672951}
 --- !u!1001 &1717080249
@@ -1464,19 +1464,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 942753141546270723, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
       propertyPath: UICanvas
-      value:
+      value: 
       objectReference: {fileID: 1351977236}
     - target: {fileID: 2165668469641966070, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
       propertyPath: playerCamera
-      value:
+      value: 
       objectReference: {fileID: 1976061119}
     - target: {fileID: 5925160710146016957, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
       propertyPath: interactionPrompt
-      value:
+      value: 
       objectReference: {fileID: 1381509773}
     - target: {fileID: 6349490825083599300, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
       propertyPath: m_Icon
-      value:
+      value: 
       objectReference: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 6349490825083599300, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
       propertyPath: m_Name
@@ -1524,7 +1524,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c3646cafe4f50346b4b3d72d8fcc984, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: '::'
   mainSinkDistance: 50
   timeToSink: 150
@@ -1676,8 +1676,8 @@ Transform:
   m_GameObject: {fileID: 2065672950}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.048360012, y: 0.501, z: 0.017460018}
+  m_LocalScale: {x: 0.45455995, y: 0.30411997, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1546883164}
@@ -1715,7 +1715,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3a2f945d3a732ce4db345b259f13b4e5, type: 2}
+  - {fileID: 2100000, guid: 124116bb5b87cf44bb7c0a0c75ff3432, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

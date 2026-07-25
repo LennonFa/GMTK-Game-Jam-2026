@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 8075957688382587000}
   - component: {fileID: 9156191909992982395}
   - component: {fileID: 3990027486533397563}
+  - component: {fileID: 8203771441497586269}
   m_Layer: 0
   m_Name: Survivor_Base
   m_TagString: Untagged
@@ -232,6 +233,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   maxHoldBreathSeconds: 3
   submergeHeight: 0.65
+--- !u!114 &8203771441497586269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799361718222040938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e63821476434fbfb1226f230de07e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Buoyancy
+  buoyancy: 600
+  floatCenter: {fileID: 0}
 --- !u!1 &6695065153585965983
 GameObject:
   m_ObjectHideFlags: 0

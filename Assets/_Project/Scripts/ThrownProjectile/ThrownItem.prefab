@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3655777072049858357}
   - component: {fileID: 4332654343002836538}
   - component: {fileID: 468706133280776418}
+  - component: {fileID: 7172995969244215642}
   m_Layer: 0
   m_Name: ThrownItem
   m_TagString: Untagged
@@ -74,3 +75,18 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &7172995969244215642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130917651417986747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e63821476434fbfb1226f230de07e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Buoyancy
+  buoyancy: 1000
+  floatCenter: {fileID: 0}
+  waterDamping: 10

@@ -29,7 +29,7 @@ Material:
     - _Density: 500
     - _QueueControl: 0
     m_Colors:
-    - _Base_Color: {r: 0.2471698, g: 0.63791925, b: 1, a: 1}
+    - _Base_Color: {r: 0.24716973, g: 0.63791925, b: 1, a: 0.6431373}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7914087288815155132

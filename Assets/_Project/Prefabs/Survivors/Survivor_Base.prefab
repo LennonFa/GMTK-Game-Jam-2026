@@ -245,8 +245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e63821476434fbfb1226f230de07e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buoyancy
-  buoyancy: 600
+  buoyancy: 1000
   floatCenter: {fileID: 0}
+  waterDamping: 10
 --- !u!1 &6695065153585965983
 GameObject:
   m_ObjectHideFlags: 0

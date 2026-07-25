@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(PlayerWaterState))]
 public class PlayerCrouch : MonoBehaviour
 {
     [SerializeField] private Transform cameraRoot;
@@ -16,12 +17,14 @@ public class PlayerCrouch : MonoBehaviour
     [SerializeField] private LayerMask obstacleLayer;
     [SerializeField] private float ceilingCheckRadius = 0.3f;
 
+    private PlayerWaterState playerWaterState;
     private CharacterController characterController;
     public bool IsCrouching { get; private set; }
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        playerWaterState = GetComponent<PlayerWaterState>();
     }
 
     private void Update()
@@ -31,7 +34,9 @@ public class PlayerCrouch : MonoBehaviour
 
     private void HandleCrouch()
     {
-        bool crouchInput = Keyboard.current.leftCtrlKey.isPressed;
+        bool isSwimming = playerWaterState.CurrentState == WaterMovementState.SurfaceSwimming || playerWaterState.CurrentState == WaterMovementState.Diving;
+
+        bool crouchInput = !isSwimming && Keyboard.current.leftCtrlKey.isPressed;
 
         if (!crouchInput && IsCrouching && !CanStandUp())
         {

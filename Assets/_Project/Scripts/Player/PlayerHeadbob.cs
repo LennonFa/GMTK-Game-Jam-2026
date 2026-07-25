@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerWaterState))]
 public class PlayerHeadbob : MonoBehaviour
 {
     [SerializeField] private bool _enable = true;
@@ -18,6 +19,7 @@ public class PlayerHeadbob : MonoBehaviour
     [SerializeField] private float landingBobAmount = 0.12f;
     [SerializeField] private float landingREcoverySpeed = 4f;
     
+    private PlayerWaterState playerWaterState;
     private CharacterController characterController;
     private Vector3 cameraStartPosition;
     private float bobTimer;
@@ -28,6 +30,7 @@ public class PlayerHeadbob : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         cameraStartPosition = playerCamera.localPosition;
+        playerWaterState = GetComponent<PlayerWaterState>();
     }
 
     private void Start()
@@ -48,10 +51,15 @@ public class PlayerHeadbob : MonoBehaviour
         Vector3 horizontalVelocity = characterController.velocity;
         horizontalVelocity.y = 0f;
 
-        bool isMoving = horizontalVelocity.magnitude > 0.1f && characterController.isGrounded;
+        
 
         Vector3 targetPosition = cameraStartPosition;
         targetPosition.y += landingOffset;
+
+        WaterMovementState waterState = playerWaterState.CurrentState;
+
+        bool isSwimming = waterState == WaterMovementState.SurfaceSwimming || waterState == WaterMovementState.Diving;
+        bool isMoving = horizontalVelocity.magnitude > 0.1f && characterController.isGrounded && !isSwimming;
 
         if (isMoving)
         {
@@ -79,9 +87,12 @@ public class PlayerHeadbob : MonoBehaviour
     
     private void HandleLanding()
     {
+        WaterMovementState waterState = playerWaterState.CurrentState;
+        
+        bool isSwimming = waterState == WaterMovementState.SurfaceSwimming || waterState == WaterMovementState.Diving;
         bool isGrounded = characterController.isGrounded;
 
-        if (!wasGrounded && isGrounded)
+        if (!wasGrounded && isGrounded && !isSwimming)
         {
             landingOffset = -landingBobAmount;
         }

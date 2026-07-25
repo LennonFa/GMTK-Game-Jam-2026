@@ -123,6 +123,13 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = moveSpeed;
         }
 
+        if (isWading)
+        {
+            float speedMultiplier = Mathf.Lerp(1f, deepWadeSpeedMultiplier, wadeAmount);
+
+            currentSpeed *= speedMultiplier;
+        }
+
         
 
         Vector3 targetVelocity = inputDirection * currentSpeed;

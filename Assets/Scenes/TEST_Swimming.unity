@@ -1465,10 +1465,22 @@ PrefabInstance:
       propertyPath: UICanvas
       value: 
       objectReference: {fileID: 483859410}
+    - target: {fileID: 2007119200954048507, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
+      propertyPath: swimRollAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2165668469641966070, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1324052930}
+    - target: {fileID: 2425785934461627842, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1324052930}
+    - target: {fileID: 2425785934461627842, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
+      propertyPath: maxSwimVerticalSpeed
+      value: 2.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5821960712948074574, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
       propertyPath: maxOxygen
       value: 50

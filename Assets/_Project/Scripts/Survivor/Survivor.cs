@@ -1,5 +1,6 @@
 using System;
 using NUnit.Framework;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class Survivor : MonoBehaviour, IInteractable, IHoldable
@@ -31,6 +32,8 @@ public class Survivor : MonoBehaviour, IInteractable, IHoldable
         isHeld = true;
         state.HeldItem = this;
 
+
+
         Hold(state.gameObject, state.holdingPosition);
 
         Debug.Log(gameObject.name + "Grabbed");
@@ -38,6 +41,8 @@ public class Survivor : MonoBehaviour, IInteractable, IHoldable
 
     public void Hold(GameObject parent, Transform holdingPosition)
     {
+        var rb = GetComponentInChildren<Rigidbody>();
+        Destroy(rb);
         ThrownProjectile projectile = GetComponentInParent<ThrownProjectile>();
 
         if (projectile != null)

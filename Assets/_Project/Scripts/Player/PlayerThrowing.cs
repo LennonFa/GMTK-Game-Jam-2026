@@ -47,7 +47,6 @@ public class PlayerThrowing : MonoBehaviour
         {
             if (isCharging)
             {
-                Debug.Log($"Attempting throw at {currentChargeTime} sec of charge vs {maxChargeTime} s Max");
                 if (state.HeldItem != null)
                 {
                     Throw();

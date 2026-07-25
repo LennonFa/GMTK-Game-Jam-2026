@@ -4,12 +4,15 @@ using UnityEngine;
 public class Lifeboat : MonoBehaviour, IInteractable
 {
     [SerializeField] private List<Transform> seats;
+    [SerializeField] private GameObject successVFX;
     private bool isFull;
     private int nextSeatIndex;
 
     public void Seat(GameObject passenger)
     {
         var seatPosition = seats[nextSeatIndex];
+
+        CreateSuccessVFX(seatPosition);
 
         // in case the boat bobs, link transforms
         passenger.transform.SetParent(transform);
@@ -45,7 +48,7 @@ public class Lifeboat : MonoBehaviour, IInteractable
 
         if (!projectile.payload.TryGetComponent(out Survivor survivor))
         {
-            return;            
+            return;
         }
 
         GameObject passenger = projectile.TakePayload();
@@ -54,5 +57,11 @@ public class Lifeboat : MonoBehaviour, IInteractable
 
         Seat(passenger);
         survivor.Rescue();
+    }
+
+    void CreateSuccessVFX(Transform vfxTransform)
+    {
+        var vfx = Instantiate(successVFX, transform, false);
+        vfx.transform.position = vfxTransform.position;
     }
 }

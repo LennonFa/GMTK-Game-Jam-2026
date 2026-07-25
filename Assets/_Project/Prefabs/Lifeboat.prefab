@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3ebbc96630e40789ad06970abbdbca1, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::Lifeboat
   seats:
   - {fileID: 8304443651135814031}
@@ -153,6 +153,7 @@ MonoBehaviour:
   - {fileID: 1556665552204267410}
   - {fileID: 1482179586638445332}
   - {fileID: 352246745413027551}
+  successVFX: {fileID: 870626304796344502, guid: 4c6054a7e778d1e4aa156cf9b3c9557e, type: 3}
 --- !u!1 &5764632643995688061
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +342,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d304f2ee77ede24282cc19920f44d7e, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::LifeboatCatchZone
   lifeboat: {fileID: 7257276858288706127}
 --- !u!1001 &4478884293412186155

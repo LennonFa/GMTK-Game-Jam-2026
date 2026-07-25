@@ -1469,6 +1469,10 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1324052930}
+    - target: {fileID: 2425785934461627842, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1324052930}
     - target: {fileID: 5821960712948074574, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
       propertyPath: maxOxygen
       value: 50

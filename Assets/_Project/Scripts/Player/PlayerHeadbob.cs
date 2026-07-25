@@ -18,6 +18,13 @@ public class PlayerHeadbob : MonoBehaviour
     [SerializeField] private float bobSmoothingSpeed = 10f;
     [SerializeField] private float landingBobAmount = 0.12f;
     [SerializeField] private float landingREcoverySpeed = 4f;
+
+    [Header("Wading")]
+    [SerializeField] private float wadePeakImmersion = 0.45f;
+    [SerializeField] private float wadePeakHeightMultiplier = 1.5f;
+    [SerializeField] private float deepWadeHeightMultiplier = 0.6f;
+    [SerializeField] private float deepWadeFrequencyMultiplier = 0.5f;
+    [SerializeField] private float deepWadeSideMultiplier = 1.35f;
     
     private PlayerWaterState playerWaterState;
     private CharacterController characterController;
@@ -58,6 +65,8 @@ public class PlayerHeadbob : MonoBehaviour
 
         WaterMovementState waterState = playerWaterState.CurrentState;
 
+        bool isWading = waterState == WaterMovementState.Wading;
+
         bool isSwimming = waterState == WaterMovementState.SurfaceSwimming || waterState == WaterMovementState.Diving;
         bool isMoving = horizontalVelocity.magnitude > 0.1f && characterController.isGrounded && !isSwimming;
 
@@ -69,13 +78,45 @@ public class PlayerHeadbob : MonoBehaviour
 
             float currentBobHeight = Mathf.Lerp(walkBobHeight, sprintBobHeight, speedPercentage);
 
+            float currentSideAmount = bobSideAmount;
+
+
+            if (isWading)
+            {
+                float immersion = playerWaterState.Immersion;
+
+                float totalWadeAmount = Mathf.InverseLerp(0f, playerWaterState.SwimEnterImmersion, immersion);
+
+                float heightMultiplier;
+
+                if (immersion <= wadePeakImmersion)
+                {
+                    float riseAmount = Mathf.InverseLerp(0f, wadePeakImmersion, immersion);
+
+                    heightMultiplier = Mathf.Lerp(1f, wadePeakHeightMultiplier, riseAmount);
+                }
+                else
+                {
+                    float fallAmount = Mathf.InverseLerp(wadePeakImmersion, playerWaterState.SwimEnterImmersion, immersion);
+
+                    heightMultiplier = Mathf.Lerp(wadePeakHeightMultiplier, deepWadeHeightMultiplier, fallAmount);
+                }
+
+                currentBobHeight *= heightMultiplier;
+
+                currentFrequency *= Mathf.Lerp(1f, deepWadeFrequencyMultiplier, totalWadeAmount);
+
+                currentSideAmount *= Mathf.Lerp(1f, deepWadeSideMultiplier, totalWadeAmount);
+            }
+
             bobTimer += Time.deltaTime * currentFrequency;
 
             float verticalOffset = Mathf.Sin(bobTimer) * currentBobHeight;
 
-            float horizontalOffset = Mathf.Sin(bobTimer * 0.5f) * bobSideAmount;
+            float horizontalOffset = Mathf.Sin(bobTimer * 0.5f) * currentSideAmount;
 
             targetPosition += new Vector3(horizontalOffset, verticalOffset, 0f);
+            
         }
         else
         {

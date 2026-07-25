@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpHeight = 1.5f;
     [SerializeField] private float underwaterMoveSpeed = 3f;
 
+    [Header("References")]
+    [SerializeField] private Transform playerCamera;
+
     [Header("Wading")] //Waterlevels until... 
     [SerializeField] private float wadeSlowStartImmersion = 0.15f;
 
@@ -26,6 +29,11 @@ public class PlayerMovement : MonoBehaviour
 
     [Range(0f, 1f)]
     [SerializeField] private float jumpDisableImmersion = 0.45f;
+
+    [Range(-1f, 0f)]
+    [SerializeField] private float surfaceDiveLookThreshold = -0.25f;
+
+    [SerializeField] private float surfaceLookDiveMultiplier = 1.5f;
     // ...
 
     [Header("Swimming")]
@@ -73,11 +81,35 @@ public class PlayerMovement : MonoBehaviour
         if (Keyboard.current.aKey.isPressed)
             input.x -= 1;
 
-        Vector3 inputDirection = transform.right * input.x + transform.forward * input.y;
+       WaterMovementState waterState = playerWaterState.CurrentState;
+
+       Vector3 inputDirection;
+
+        if (waterState == WaterMovementState.Diving)
+        {
+            inputDirection = playerCamera.right * input.x + playerCamera.forward * input.y;
+        }
+        else
+        {
+            inputDirection = transform.right * input.x + transform.forward * input.y;
+        }
 
         inputDirection = inputDirection.normalized;
 
-        WaterMovementState waterState = playerWaterState.CurrentState;
+        bool wantsLookDive = waterState == WaterMovementState.SurfaceSwimming && input.y > 0f && playerCamera.forward.y < surfaceDiveLookThreshold;
+
+        float diveLookVerticalInput = 0f;
+
+        if (waterState == WaterMovementState.Diving)
+        {
+            diveLookVerticalInput = inputDirection.y;
+
+            inputDirection.y = 0f;
+        }
+        else if (wantsLookDive)
+        {
+            diveLookVerticalInput = playerCamera.forward.y * surfaceLookDiveMultiplier;
+        }
 
         bool isWading = waterState == WaterMovementState.Wading;
 
@@ -151,7 +183,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (isSwimming)
         {
-            HandleSwimmingVerticalMovement(waterState);
+            HandleSwimmingVerticalMovement(waterState, diveLookVerticalInput);
         }
         else
         {
@@ -176,15 +208,17 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(finalVelocity * Time.deltaTime);
     }
 
-    private void HandleSwimmingVerticalMovement(WaterMovementState waterState)
+    private void HandleSwimmingVerticalMovement(WaterMovementState waterState, float diveLookVerticalInput)
     {
         bool wantsToRise = Keyboard.current.spaceKey.isPressed;
 
         bool wantsToDive = Keyboard.current.leftCtrlKey.isPressed;
 
+        bool wantsToLookDive = waterState == WaterMovementState.SurfaceSwimming && diveLookVerticalInput < 0f;
+
         float targetVerticalVelocity;
 
-        if (waterState == WaterMovementState.SurfaceSwimming && !wantsToDive)
+        if (waterState == WaterMovementState.SurfaceSwimming && !wantsToDive && !wantsToRise && !wantsToLookDive)
         {
             float targetHeadDepth = -surfaceHeadHeight;
             float depthError = playerWaterState.HeadDepth - targetHeadDepth;
@@ -193,13 +227,15 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            float verticalInput = 0f;
+            float verticalInput = waterState == WaterMovementState.Diving || wantsToLookDive ? diveLookVerticalInput : 0f;
 
             if (wantsToRise)
                 verticalInput += 1f;
 
             if (wantsToDive)
                 verticalInput -= 1f;
+
+            verticalInput = Mathf.Clamp(verticalInput, -1f, 1f);
 
             if (verticalInput == 0f)
             {

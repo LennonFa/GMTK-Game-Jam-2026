@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSinkDistance: 50
-  timeToSink: 300
+  timeToSink: 150
   targetRotation: {x: -0.21191405, y: -0.0042458773, z: 0.43495634, w: -0.87514985}
   slowSinkingSpeed: 3
 --- !u!1001 &1903227164

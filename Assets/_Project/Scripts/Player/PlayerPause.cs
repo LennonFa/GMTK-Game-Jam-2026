@@ -66,6 +66,8 @@ public class PlayerPause : MonoBehaviour
     {
         affectedSystems.ForEach(system => system.enabled = false);
 
+        Time.timeScale = 0;
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
@@ -80,6 +82,8 @@ public class PlayerPause : MonoBehaviour
     void UnPause()
     {
         affectedSystems.ForEach(system => system.enabled = true);
+
+        Time.timeScale = 1;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

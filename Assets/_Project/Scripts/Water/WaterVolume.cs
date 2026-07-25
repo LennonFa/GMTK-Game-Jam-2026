@@ -37,7 +37,7 @@ public class WaterVolume : MonoBehaviour
         {
             waterState.ExitWater(waterSurface);
         }
-        
+
         if (!other.TryGetComponent(out PlayerOxygen oxygen))
             return;
 
@@ -45,5 +45,10 @@ public class WaterVolume : MonoBehaviour
 
         playerOxygen = null;
         playerCamera = null;
+    }
+
+    public Transform GetSurface()
+    {
+        return waterSurface;
     }
 }

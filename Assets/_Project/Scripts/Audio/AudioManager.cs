@@ -28,6 +28,8 @@ public class AudioManager : MonoBehaviour
     private EventInstance ambienceEventInstance;
     private EventInstance musicEventInstance;
 
+    public float currentMusicParam;
+
     public static AudioManager instance { get; private set; }
 
     private void Awake()
@@ -80,12 +82,14 @@ public class AudioManager : MonoBehaviour
     {
         ambienceEventInstance.setParameterByName(parameterName, parameterValue);
     }
-    /*
-    public void SetMusicArea(MusicArea area)
+    
+    public void SetMusicParam(float increment)
     {
-        musicEventInstance.setParameterByName("area", (float)area);
+        float currentMusicParam;
+        musicEventInstance.getParameterByName("flood_level", out currentMusicParam);
+        musicEventInstance.setParameterByName("flood_level", currentMusicParam + increment);
     }
-    */
+    
     public void PlayOneShot(FMODUnity.EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);

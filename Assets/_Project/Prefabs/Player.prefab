@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9356524970145354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5696494834303589816}
+  - component: {fileID: 5885930411305526265}
+  m_Layer: 2
+  m_Name: PlayerAudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5696494834303589816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9356524970145354}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 551242918972616747}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5885930411305526265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9356524970145354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c827c734d2f0924d968eeab0ba98e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAudioManager
 --- !u!1 &1425489999478169090
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,6 +87,7 @@ GameObject:
   - component: {fileID: 4600747620308903654}
   - component: {fileID: 1918017348662186416}
   - component: {fileID: 2501896034081918152}
+  - component: {fileID: -1868260432473905427}
   m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -168,6 +213,20 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &-1868260432473905427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2556649357242726841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &3481565653415629228
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +280,7 @@ GameObject:
   - component: {fileID: 5898118441037371967}
   - component: {fileID: 8602156587409704909}
   - component: {fileID: 942753141546270723}
+  - component: {fileID: 2165668469641966070}
   m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
@@ -243,6 +303,7 @@ Transform:
   m_Children:
   - {fileID: 2710911498592351437}
   - {fileID: 9165935648812498378}
+  - {fileID: 5696494834303589816}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1515302762760150824
@@ -290,6 +351,20 @@ MonoBehaviour:
   deceleration: 25
   jumpHeight: 1.5
   underwaterMoveSpeed: 3
+  playerCamera: {fileID: 0}
+  wadeSlowStartImmersion: 0.15
+  deepWadeSpeedMultiplier: 0.5
+  sprintDisableImmersion: 0.35
+  jumpDisableImmersion: 0.45
+  surfaceDiveLookThreshold: -0.25
+  surfaceLookDiveMultiplier: 1.5
+  surfaceSwimSpeed: 3.5
+  swimAcceleration: 8
+  surfaceHeadHeight: 0.12
+  surfaceBuoyancyStrength: 6
+  swimVerticalAcceleration: 8
+  maxSwimVerticalSpeed: 2
+  passiveBuoyancySpeed: 0.25
 --- !u!114 &5939927158793870589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +417,11 @@ MonoBehaviour:
   bobSmoothingSpeed: 10
   landingBobAmount: 0.45
   landingREcoverySpeed: 4
+  wadePeakImmersion: 0.45
+  wadePeakHeightMultiplier: 1.5
+  deepWadeHeightMultiplier: 0.6
+  deepWadeFrequencyMultiplier: 0.5
+  deepWadeSideMultiplier: 1.35
 --- !u!114 &4031271244147827899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +472,9 @@ MonoBehaviour:
   cameraRoot: {fileID: 2710911498592351437}
   swayAngle: 1.7
   swaySpeed: 6
+  swimRollAmount: 1.2
+  swimPitchAmount: 0.6
+  swimSwaySpeed: 1.5
 --- !u!114 &5821960712948074574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,3 +535,20 @@ MonoBehaviour:
   pauseUI: {fileID: 9197481963319205126, guid: 4b6d30b5ca8c12e4eb105b4f2a5c91f9, type: 3}
   UICanvas: {fileID: 0}
   panelSettings: {fileID: 11400000, guid: 042e8ddc57681eb4cb73b50de3bed8d9, type: 2}
+--- !u!114 &2165668469641966070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6349490825083599300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96aa479deb332bd40ba61823c8095e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerWaterState
+  playerCamera: {fileID: 0}
+  swimEnterImmersion: 0.72
+  swimExitImmersion: 0.6
+  diveEnterDepth: 0.05
+  diveExitHeight: 0.1

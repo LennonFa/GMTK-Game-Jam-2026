@@ -310,7 +310,7 @@ MonoBehaviour:
   sourceProjectPath: ../../../FMOD projects/GMTK 2026 FMOD 1.1/GMTK 2026 FMOD 1.1.fspro
   sourceBankPath: Assets/_Project/Audio/FMOD Built Banks
   sourceBankPathUnformatted: 
-  BankRefreshCooldown: 5
+  BankRefreshCooldown: 1
   ShowBankRefreshWindow: 1
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -333,8 +333,10 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Character
+  - Environment
   - Music
-  - SFX
+  - UI
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

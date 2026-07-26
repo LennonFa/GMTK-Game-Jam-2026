@@ -950,6 +950,176 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5076798556035486163, guid: 6c5b41677865ef54baf61b8e7e8ff8af, type: 3}
+--- !u!1 &936208704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 936208706}
+  - component: {fileID: 936208705}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &936208705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936208704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50ab27c154cf60646be2f82d11c002f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  masterVolume: 1
+  musicVolume: 1
+  ambienceVolume: 1
+  SFXVolume: 1
+--- !u!4 &936208706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936208704}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.27353, y: 14.83178, z: 7.68903}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 963351987}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &963351986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 963351987}
+  - component: {fileID: 963351988}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &963351987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963351986}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 936208706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963351988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963351986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ce4e122525fc354d8a4f6a7a2194b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FMODEvents
+  <Storm>k__BackingField:
+    Guid:
+      Data1: -161063944
+      Data2: 1089629514
+      Data3: -1105391960
+      Data4: 1560201317
+    Path: event:/Environment/stormy_seas
+  <WaterAmbience>k__BackingField:
+    Guid:
+      Data1: -1361863282
+      Data2: 1105122130
+      Data3: 333700506
+      Data4: -1054301283
+    Path: event:/Environment/underwater
+  <music>k__BackingField:
+    Guid:
+      Data1: 1922340774
+      Data2: 1307568074
+      Data3: -1998620496
+      Data4: 821383887
+    Path: event:/Music/Zone 1
+  <Jump>k__BackingField:
+    Guid:
+      Data1: -140211390
+      Data2: 1181965668
+      Data3: 578110636
+      Data4: -66320251
+    Path: event:/Character/jump
+  <Wade>k__BackingField:
+    Guid:
+      Data1: 250743157
+      Data2: 1275753637
+      Data3: -37357678
+      Data4: -837032232
+    Path: event:/Character/wade
+  <SwimShallow>k__BackingField:
+    Guid:
+      Data1: 541675639
+      Data2: 1123637507
+      Data3: -1264588627
+      Data4: 368890048
+    Path: event:/Character/swim_surface
+  <Swim>k__BackingField:
+    Guid:
+      Data1: -569436703
+      Data2: 1241409929
+      Data3: 107444877
+      Data4: -1081587842
+    Path: event:/Character/swim_underwater
+  <DryWalk>k__BackingField:
+    Guid:
+      Data1: -1162311129
+      Data2: 1305076184
+      Data3: 641621145
+      Data4: -549153729
+    Path: event:/Character/walk_metal
+  <DryRun>k__BackingField:
+    Guid:
+      Data1: 531625629
+      Data2: 1097350018
+      Data3: 671401148
+      Data4: 2019429964
+    Path: event:/Character/run_metal
+  <UIHover>k__BackingField:
+    Guid:
+      Data1: 435419195
+      Data2: 1274661679
+      Data3: -1476484448
+      Data4: -1596536567
+    Path: event:/UI/hover
+  <UIAccept>k__BackingField:
+    Guid:
+      Data1: -793600111
+      Data2: 1340058680
+      Data3: 1427668907
+      Data4: 1360692852
+    Path: event:/UI/navigate
 --- !u!1001 &973849377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2631,6 +2801,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1051677455}
+  - {fileID: 936208706}
   - {fileID: 162931514}
   - {fileID: 1808535254}
   - {fileID: 1133151331}

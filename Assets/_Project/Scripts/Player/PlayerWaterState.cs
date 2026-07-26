@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -40,6 +41,8 @@ public class PlayerWaterState : MonoBehaviour
     private Transform waterSurface; 
     private float standingHeight;
 
+    
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -58,6 +61,7 @@ public class PlayerWaterState : MonoBehaviour
     public void EnterWater(Transform surface)
     {
         waterSurface = surface;
+        AudioManager.instance.SetAmbienceParameter("is_underwater", 2);
     }
 
     public void ExitWater(Transform surface)
@@ -72,7 +76,10 @@ public class PlayerWaterState : MonoBehaviour
         HeadDepth = 0f;
 
         SetState(WaterMovementState.Dry);
+        AudioManager.instance.SetAmbienceParameter("is_underwater", 1);
+
     }
+
 
     private void UpdateMeasurements()
     {
@@ -95,6 +102,7 @@ public class PlayerWaterState : MonoBehaviour
         if (!IsInWater)
         {
             SetState(WaterMovementState.Dry);
+            
             return;
         }
 
@@ -107,6 +115,7 @@ public class PlayerWaterState : MonoBehaviour
         if (!shouldSwim)
         {
             SetState(WaterMovementState.Wading);
+            
             return;
         }
 
@@ -119,6 +128,7 @@ public class PlayerWaterState : MonoBehaviour
         else
         {
             shouldDive = HeadDepth > diveEnterDepth;
+            
         }
 
         SetState(shouldDive ? WaterMovementState.Diving : WaterMovementState.SurfaceSwimming);
@@ -128,6 +138,11 @@ public class PlayerWaterState : MonoBehaviour
     {
         if (CurrentState == newState)
             return;
+        if (newState == WaterMovementState.SurfaceSwimming)
+            AudioManager.instance.SetAmbienceParameter("is_underwater", 1);
+        else if(newState == WaterMovementState.Diving)
+            AudioManager.instance.SetAmbienceParameter("is_underwater", 2);
+            PlayerAudioManager.instance.SwitchMovementSFX(FMODEvents.instance.Swim);
 
         CurrentState = newState;
 

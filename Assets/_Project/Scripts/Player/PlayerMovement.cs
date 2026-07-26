@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         if (Keyboard.current.aKey.isPressed)
             input.x -= 1;
 
-        if (input.x == 0 && input.y == 0 || !characterController.isGrounded)
+        if (input.x == 0 && input.y == 0)
         {
             PlayerAudioManager.instance.CurrentMovement.setPaused(true);
         }

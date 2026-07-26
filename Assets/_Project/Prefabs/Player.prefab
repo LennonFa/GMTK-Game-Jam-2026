@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c827c734d2f0924d968eeab0ba98e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAudioManager
+  CurrentRef:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &1425489999478169090
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,6 +82,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 551242918972616747}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1709331495495341115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3416759051772196238}
+  - component: {fileID: 7239149413071394793}
+  m_Layer: 0
+  m_Name: UnderwaterVolume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3416759051772196238
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709331495495341115}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5999999, z: -0.157}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 551242918972616747}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7239149413071394793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709331495495341115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 10
+  blendDistance: 0
+  weight: 0
+  sharedProfile: {fileID: 11400000, guid: f0ddafb977b3fb549a565b60bfce7fd6, type: 2}
 --- !u!1 &2556649357242726841
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +248,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -281,6 +337,7 @@ GameObject:
   - component: {fileID: 8602156587409704909}
   - component: {fileID: 942753141546270723}
   - component: {fileID: 2165668469641966070}
+  - component: {fileID: 9039229587348484571}
   m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
@@ -304,6 +361,7 @@ Transform:
   - {fileID: 2710911498592351437}
   - {fileID: 9165935648812498378}
   - {fileID: 5696494834303589816}
+  - {fileID: 3416759051772196238}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1515302762760150824
@@ -351,6 +409,7 @@ MonoBehaviour:
   deceleration: 25
   jumpHeight: 1.5
   underwaterMoveSpeed: 3
+  moveState: 0
   playerCamera: {fileID: 0}
   wadeSlowStartImmersion: 0.15
   deepWadeSpeedMultiplier: 0.5
@@ -547,8 +606,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96aa479deb332bd40ba61823c8095e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerWaterState
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 3193590992133512013}
   swimEnterImmersion: 0.72
   swimExitImmersion: 0.6
   diveEnterDepth: 0.05
   diveExitHeight: 0.1
+--- !u!114 &9039229587348484571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6349490825083599300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bebf6c8d4da4c845a754a0b8d7c549c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnderwaterVisuals
+  underwaterVolume: {fileID: 7239149413071394793}
+  fullEffectDepth: 0.35
+  fadeSpeed: 3

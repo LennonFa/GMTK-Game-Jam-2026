@@ -2102,6 +2102,7 @@ MonoBehaviour:
   musicVolume: 1
   ambienceVolume: 1
   SFXVolume: 1
+  currentMusicParam: 0
 --- !u!4 &936208706
 Transform:
   m_ObjectHideFlags: 0
@@ -5587,6 +5588,10 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1976061119}
+    - target: {fileID: 5821960712948074574, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
+      propertyPath: maxOxygen
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 5925160710146016957, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
       propertyPath: interactionPrompt
       value: 

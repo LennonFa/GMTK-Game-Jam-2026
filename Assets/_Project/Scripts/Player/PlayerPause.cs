@@ -145,6 +145,13 @@ public class PlayerPause : MonoBehaviour
         // modify this into something robust later
         AudioManager.instance.PlayOneShot(FMODEvents.instance.UIAccept, this.transform.position);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        isPaused = false;
+        Time.timeScale = 1f;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void Quit()

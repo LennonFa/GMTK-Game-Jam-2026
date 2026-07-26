@@ -23,7 +23,8 @@ public class FMODEvents : MonoBehaviour
     [field: Header("UI SFX")]
     [field: SerializeField] public EventReference UIHover { get; private set; }
     [field: SerializeField] public EventReference UIAccept { get; private set; }
-
+    [field: SerializeField] public EventReference Pause { get; private set; }
+    [field: SerializeField] public EventReference Unpause { get; private set; }
 
     public static FMODEvents instance { get; private set; }
 

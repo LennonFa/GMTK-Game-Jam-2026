@@ -42,11 +42,18 @@ public class MainMenu : MonoBehaviour
     {
         mainMenuPanel.SetActive(false);
         creditsPanel.SetActive(true);
+
     }
 
     public void CloseCredits()
     {
         mainMenuPanel.SetActive(true);
         creditsPanel.SetActive(false);
+
+    }
+
+    public void playUI()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.UIAccept, this.transform.position);
     }
 }

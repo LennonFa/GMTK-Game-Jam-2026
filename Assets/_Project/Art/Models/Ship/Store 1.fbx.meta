@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 6c5b41677865ef54baf61b8e7e8ff8af
+guid: ceadb808037fef34d8e75cc2751cace6
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: openPBR_shader1
+    second: {fileID: 2100000, guid: 81a58862e7a9b8d4f88269fad97cad76, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -31,7 +36,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1

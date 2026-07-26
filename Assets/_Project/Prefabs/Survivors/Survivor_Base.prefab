@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 9156191909992982395}
   - component: {fileID: 3990027486533397563}
   - component: {fileID: 8203771441497586269}
+  - component: {fileID: 8790691650572288597}
   m_Layer: 0
   m_Name: Survivor_Base
   m_TagString: Untagged
@@ -192,6 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026489914658ec14e90914e63bcb5556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Survivor
+  isRescued: 0
+  isHeld: 0
 --- !u!54 &9156191909992982395
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -233,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   maxHoldBreathSeconds: 3
   submergeHeight: 0.65
+  submerged: 0
 --- !u!114 &8203771441497586269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +252,23 @@ MonoBehaviour:
   buoyancy: 1000
   floatCenter: {fileID: 0}
   waterDamping: 10
+--- !u!114 &8790691650572288597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799361718222040938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8c6813bda145f3afe5a9b92e2da708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SurvivorAnimator
+  animator: {fileID: 0}
+  survivor: {fileID: 0}
+  survivorOxygen: {fileID: 0}
+  wobbleThreshAngle: 10
+  stopWobbleSeconds: 1
 --- !u!1 &6695065153585965983
 GameObject:
   m_ObjectHideFlags: 0

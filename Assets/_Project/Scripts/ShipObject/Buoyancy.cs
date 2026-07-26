@@ -47,7 +47,7 @@ public class Buoyancy : MonoBehaviour
 
     private void Update()
     {
-        if (!contactedWater) return;
+        if (!contactedWater || !rb) return;
 
         var distanceToSurface = contactedWater.GetSurface().position.y - floatCenter.position.y;
         if (distanceToSurface < 0) return; // Above floatCenter

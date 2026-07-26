@@ -1,5 +1,367 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8968865326666976056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/book_close
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UI/book_close
+  Guid:
+    Data1: 776234608
+    Data2: 1224161499
+    Data3: -1891930453
+    Data4: 2019221690
+  Banks:
+  - {fileID: -4426374613470549983}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600
+--- !u!114 &-8799457323249453794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/ship_foghorn
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UI/ship_foghorn
+  Guid:
+    Data1: -1829350454
+    Data2: 1261775668
+    Data3: 81486522
+    Data4: -2113632611
+  Banks:
+  - {fileID: -4426374613470549983}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6800
+--- !u!114 &-8349160532988082073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/book_flip
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UI/book_flip
+  Guid:
+    Data1: 1497491549
+    Data2: 1083457071
+    Data3: 488920463
+    Data4: 1469149469
+  Banks:
+  - {fileID: -4426374613470549983}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2840
+--- !u!114 &-7750089086073057754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/underwater
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Environment/underwater
+  Guid:
+    Data1: -1361863282
+    Data2: 1105122130
+    Data3: 333700506
+    Data4: -1054301283
+  Banks:
+  - {fileID: 9143404910347138115}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -2597839004326822118}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 44252
+--- !u!114 &-5788326080859262235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 639206146984408816
+  FileSizes:
+  - Name: Desktop
+    Value: 7146592
+  Exists: 1
+--- !u!114 &-5691853721918270406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/stone_splash
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UI/stone_splash
+  Guid:
+    Data1: -1410827160
+    Data2: 1079534490
+    Data3: 471058832
+    Data4: 1002460593
+  Banks:
+  - {fileID: -4426374613470549983}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-4924994877429236903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/swim_underwater
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Character/swim_underwater
+  Guid:
+    Data1: -569436703
+    Data2: 1241409929
+    Data3: 107444877
+    Data4: -1081587842
+  Banks:
+  - {fileID: 1001632727614154086}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15000
+--- !u!114 &-4769567053739447640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/wade
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Character/wade
+  Guid:
+    Data1: 250743157
+    Data2: 1275753637
+    Data3: -37357678
+    Data4: -837032232
+  Banks:
+  - {fileID: 1001632727614154086}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16100
+--- !u!114 &-4426374613470549983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/UI.bank
+  Name: UI
+  StudioPath: bank:/UI
+  lastModified: 639206146984849045
+  FileSizes:
+  - Name: Desktop
+    Value: 787328
+  Exists: 1
+--- !u!114 &-4373047431985020620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/walk_metal
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Character/walk_metal
+  Guid:
+    Data1: -1162311129
+    Data2: 1305076184
+    Data3: 641621145
+    Data4: -549153729
+  Banks:
+  - {fileID: 1001632727614154086}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17228
+--- !u!114 &-3488417631392395214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/stormy_seas
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Environment/stormy_seas
+  Guid:
+    Data1: -161063944
+    Data2: 1089629514
+    Data3: -1105391960
+    Data4: 1560201317
+  Banks:
+  - {fileID: 9143404910347138115}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 36000
+--- !u!114 &-3260173341348727697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/flood_level
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: flood_level
+  StudioPath: parameter:/flood_level
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 4242500039
+    data2: 1556329389
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-2597839004326822118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/underwater/is_underwater
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: is_underwater
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3159839109
+    data2: 2452753414
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Init
+  - No
+  - Yes
+  Exists: 1
+--- !u!114 &-1585594349470784270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/run_metal
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Character/run_metal
+  Guid:
+    Data1: 531625629
+    Data2: 1097350018
+    Data3: 671401148
+    Data4: 2019429964
+  Banks:
+  - {fileID: 1001632727614154086}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 27300
 --- !u!114 &-1294499893284465109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,7 +377,7 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639204924878147139
+  lastModified: 639204600722619020
   FileSizes:
   - Name: Desktop
     Value: 7328
@@ -42,6 +404,30 @@ MonoBehaviour:
     data2: 1556329389
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-364717269370793290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Zone 1/flood_level
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: flood_level
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 4242500039
+    data2: 1556329389
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &-60872836324615292
@@ -86,21 +472,43 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
   EditorBanks:
-  - {fileID: 4103637453932027067}
-  - {fileID: 3642613235856824763}
-  - {fileID: 2726686134141952594}
-  - {fileID: -1294499893284465109}
+  - {fileID: 4668167717213418629}
+  - {fileID: 1001632727614154086}
+  - {fileID: 9143404910347138115}
+  - {fileID: 3000914612150529139}
+  - {fileID: -5788326080859262235}
+  - {fileID: -4426374613470549983}
   EditorEvents:
-  - {fileID: -60872836324615292}
-  - {fileID: 2470726120704389400}
-  - {fileID: 4469901633517139253}
-  EditorParameters: []
+  - {fileID: 6738973809771423910}
+  - {fileID: -4373047431985020620}
+  - {fileID: 8300947527457430836}
+  - {fileID: -4769567053739447640}
+  - {fileID: 1795054273545167591}
+  - {fileID: -1585594349470784270}
+  - {fileID: 1760225527670830489}
+  - {fileID: 9169002090592118143}
+  - {fileID: -4924994877429236903}
+  - {fileID: 7547421051037138002}
+  - {fileID: -7750089086073057754}
+  - {fileID: -3488417631392395214}
+  - {fileID: 6405037658123976245}
+  - {fileID: 5808811176326106016}
+  - {fileID: 4603422525832822145}
+  - {fileID: -8349160532988082073}
+  - {fileID: -5691853721918270406}
+  - {fileID: -8968865326666976056}
+  - {fileID: 6930957681726682293}
+  - {fileID: -8799457323249453794}
+  EditorParameters:
+  - {fileID: 6706793591948457397}
+  - {fileID: -3260173341348727697}
+  - {fileID: 7310047125979250989}
   MasterBanks:
-  - {fileID: 3642613235856824763}
+  - {fileID: 3000914612150529139}
   StringsBanks:
-  - {fileID: 4103637453932027067}
+  - {fileID: 4668167717213418629}
   cacheVersion: 131860
-  cacheTime: 639204924878147139
+  cacheTime: 639206146984849045
   SerializableEventsDict:
   - key: event:/Zone 1
     index: 0
@@ -108,6 +516,105 @@ MonoBehaviour:
     index: 1
   - key: event:/Splash
     index: 2
+--- !u!114 &234045453607941794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/heartbeat/oxygen_level
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: oxygen_level
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 100
+  ID:
+    data1: 162848392
+    data2: 536762179
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &1001632727614154086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Character.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Character.bank
+  Name: Character
+  StudioPath: bank:/Character
+  lastModified: 639206146982324569
+  FileSizes:
+  - Name: Desktop
+    Value: 2232032
+  Exists: 1
+--- !u!114 &1760225527670830489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/heartbeat
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Character/heartbeat
+  Guid:
+    Data1: 1666282433
+    Data2: 1301653647
+    Data3: -507518071
+    Data4: 559829297
+  Banks:
+  - {fileID: 1001632727614154086}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 234045453607941794}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15000
+--- !u!114 &1795054273545167591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/swim_surface
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Character/swim_surface
+  Guid:
+    Data1: 541675639
+    Data2: 1123637507
+    Data3: -1264588627
+    Data4: 368890048
+  Banks:
+  - {fileID: 1001632727614154086}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15000
 --- !u!114 &2470726120704389400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,10 +657,30 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639204924878114450
+  lastModified: 639204600722408211
   FileSizes:
   - Name: Desktop
     Value: 7146528
+  Exists: 1
+--- !u!114 &3000914612150529139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639206146983618172
+  FileSizes:
+  - Name: Desktop
+    Value: 5676
   Exists: 1
 --- !u!114 &3642613235856824763
 MonoBehaviour:
@@ -170,7 +697,7 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639204924877258904
+  lastModified: 639204600721784404
   FileSizes:
   - Name: Desktop
     Value: 7147104
@@ -190,7 +717,7 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639204924877273877
+  lastModified: 639204600721804324
   FileSizes:
   - Name: Desktop
     Value: 1000
@@ -222,3 +749,311 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &4603422525832822145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Zone 1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Zone 1
+  Guid:
+    Data1: 1922340774
+    Data2: 1307568074
+    Data3: -1998620496
+    Data4: 821383887
+  Banks:
+  - {fileID: -5788326080859262235}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -364717269370793290}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 130362
+--- !u!114 &4668167717213418629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639206146983659316
+  FileSizes:
+  - Name: Desktop
+    Value: 2248
+  Exists: 1
+--- !u!114 &5808811176326106016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/snapshot_submerged
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: snapshot:/snapshot_submerged
+  Guid:
+    Data1: 944580968
+    Data2: 1313422317
+    Data3: -2025897082
+    Data4: -538489652
+  Banks:
+  - {fileID: 3000914612150529139}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &6405037658123976245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/pause_menu
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: snapshot:/pause_menu
+  Guid:
+    Data1: -2145810351
+    Data2: 1322558184
+    Data3: 2005388188
+    Data4: 14685076
+  Banks:
+  - {fileID: 3000914612150529139}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &6706793591948457397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/oxygen_level
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: oxygen_level
+  StudioPath: parameter:/oxygen_level
+  Min: 0
+  Max: 100
+  Default: 100
+  ID:
+    data1: 162848392
+    data2: 536762179
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6738973809771423910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/dive
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Character/dive
+  Guid:
+    Data1: -41713399
+    Data2: 1191787091
+    Data3: 902754432
+    Data4: -1045645712
+  Banks:
+  - {fileID: 1001632727614154086}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2419
+--- !u!114 &6930957681726682293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/navigate
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UI/navigate
+  Guid:
+    Data1: -793600111
+    Data2: 1340058680
+    Data3: 1427668907
+    Data4: 1360692852
+  Banks:
+  - {fileID: -4426374613470549983}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 100
+--- !u!114 &7310047125979250989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/is_underwater
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: is_underwater
+  StudioPath: parameter:/is_underwater
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3159839109
+    data2: 2452753414
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Init
+  - No
+  - Yes
+  Exists: 1
+--- !u!114 &7547421051037138002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/people_screaming
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Environment/people_screaming
+  Guid:
+    Data1: -1745526950
+    Data2: 1085703669
+    Data3: 1587271089
+    Data4: -492036803
+  Banks:
+  - {fileID: 9143404910347138115}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 13500
+--- !u!114 &8300947527457430836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/jump
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Character/jump
+  Guid:
+    Data1: -140211390
+    Data2: 1181965668
+    Data3: 578110636
+    Data4: -66320251
+  Banks:
+  - {fileID: 1001632727614154086}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 820
+--- !u!114 &9143404910347138115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Environment.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Environment.bank
+  Name: Environment
+  StudioPath: bank:/Environment
+  lastModified: 639206146983426256
+  FileSizes:
+  - Name: Desktop
+    Value: 8071328
+  Exists: 1
+--- !u!114 &9169002090592118143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/walk_shallow_water
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Character/walk_shallow_water
+  Guid:
+    Data1: -1179935269
+    Data2: 1101101367
+    Data3: -821450827
+    Data4: 48008958
+  Banks:
+  - {fileID: 1001632727614154086}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 18000

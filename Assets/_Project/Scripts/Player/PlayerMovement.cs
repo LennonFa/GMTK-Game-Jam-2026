@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float deceleration = 25f;
     [SerializeField] private float jumpHeight = 1.5f;
     [SerializeField] private float underwaterMoveSpeed = 3f;
+    [SerializeField] private int moveState = 0;
 
     [Header("References")]
     [SerializeField] private Transform playerCamera;

@@ -124,10 +124,10 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639206146984408816
+  lastModified: 639206183846479484
   FileSizes:
   - Name: Desktop
-    Value: 7146592
+    Value: 8245088
   Exists: 1
 --- !u!114 &-5691853721918270406
 MonoBehaviour:
@@ -225,10 +225,10 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 639206146984849045
+  lastModified: 639206183849031956
   FileSizes:
   - Name: Desktop
-    Value: 787328
+    Value: 811648
   Exists: 1
 --- !u!114 &-4373047431985020620
 MonoBehaviour:
@@ -499,6 +499,8 @@ MonoBehaviour:
   - {fileID: -8968865326666976056}
   - {fileID: 6930957681726682293}
   - {fileID: -8799457323249453794}
+  - {fileID: 2001647780765737239}
+  - {fileID: 6008662403624998471}
   EditorParameters:
   - {fileID: 6706793591948457397}
   - {fileID: -3260173341348727697}
@@ -508,14 +510,52 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 4668167717213418629}
   cacheVersion: 131860
-  cacheTime: 639206146984849045
+  cacheTime: 639206183849031956
   SerializableEventsDict:
-  - key: event:/Zone 1
+  - key: event:/Character/dive
     index: 0
-  - key: event:/Unlock
+  - key: event:/Character/walk_metal
     index: 1
-  - key: event:/Splash
+  - key: event:/Character/jump
     index: 2
+  - key: event:/Character/wade
+    index: 3
+  - key: event:/Character/swim_surface
+    index: 4
+  - key: event:/Character/run_metal
+    index: 5
+  - key: event:/Character/heartbeat
+    index: 6
+  - key: event:/Character/walk_shallow_water
+    index: 7
+  - key: event:/Character/swim_underwater
+    index: 8
+  - key: event:/Environment/people_screaming
+    index: 9
+  - key: event:/Environment/underwater
+    index: 10
+  - key: event:/Environment/stormy_seas
+    index: 11
+  - key: snapshot:/pause_menu
+    index: 12
+  - key: snapshot:/snapshot_submerged
+    index: 13
+  - key: event:/Music/Zone 1
+    index: 14
+  - key: event:/UI/book_flip
+    index: 15
+  - key: event:/UI/stone_splash
+    index: 16
+  - key: event:/UI/book_close
+    index: 17
+  - key: event:/UI/navigate
+    index: 18
+  - key: event:/UI/ship_foghorn
+    index: 19
+  - key: event:/Music/title_screen
+    index: 20
+  - key: event:/UI/game_start
+    index: 21
 --- !u!114 &234045453607941794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,7 +595,7 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Character.bank
   Name: Character
   StudioPath: bank:/Character
-  lastModified: 639206146982324569
+  lastModified: 639206183795838564
   FileSizes:
   - Name: Desktop
     Value: 2232032
@@ -615,6 +655,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 15000
+--- !u!114 &2001647780765737239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/title_screen
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/title_screen
+  Guid:
+    Data1: 435727259
+    Data2: 1309186351
+    Data3: 1463261068
+    Data4: -879545017
+  Banks:
+  - {fileID: -5788326080859262235}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 87128
 --- !u!114 &2470726120704389400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,10 +744,10 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639206146983618172
+  lastModified: 639206183820675839
   FileSizes:
   - Name: Desktop
-    Value: 5676
+    Value: 5818
   Exists: 1
 --- !u!114 &3642613235856824763
 MonoBehaviour:
@@ -792,10 +859,10 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639206146983659316
+  lastModified: 639206183820689957
   FileSizes:
   - Name: Desktop
-    Value: 2248
+    Value: 2344
   Exists: 1
 --- !u!114 &5808811176326106016
 MonoBehaviour:
@@ -824,6 +891,33 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &6008662403624998471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/game_start
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UI/game_start
+  Guid:
+    Data1: -322065532
+    Data2: 1223075066
+    Data3: 1714967992
+    Data4: -1693038765
+  Banks:
+  - {fileID: -4426374613470549983}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2037
 --- !u!114 &6405037658123976245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,7 +1119,7 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Environment.bank
   Name: Environment
   StudioPath: bank:/Environment
-  lastModified: 639206146983426256
+  lastModified: 639206183820591766
   FileSizes:
   - Name: Desktop
     Value: 8071328

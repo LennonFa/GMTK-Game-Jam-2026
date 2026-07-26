@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: submergeHeight
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 3990027486533397563, guid: 9efa573a06adc0e43820eec65bc03ef6, type: 3}
+      propertyPath: maxHoldBreathSeconds
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4741966316236894604, guid: 9efa573a06adc0e43820eec65bc03ef6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

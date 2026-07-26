@@ -138,8 +138,13 @@ public class PlayerPause : MonoBehaviour
 
     void Restart()
     {
-        // modify this into something robust later
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        isPaused = false;
+        Time.timeScale = 1f;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void Quit()

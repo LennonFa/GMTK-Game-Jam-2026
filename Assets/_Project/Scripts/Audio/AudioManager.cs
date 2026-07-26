@@ -50,7 +50,9 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        InitializeAmbience(FMODEvents.instance.Storm);
         InitializeAmbience(FMODEvents.instance.WaterAmbience);
+        
         InitializeMusic(FMODEvents.instance.music);
     }
     /*

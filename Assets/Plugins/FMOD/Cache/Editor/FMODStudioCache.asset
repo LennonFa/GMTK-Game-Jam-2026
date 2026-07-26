@@ -225,10 +225,10 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 639206183849031956
+  lastModified: 639206340745733440
   FileSizes:
   - Name: Desktop
-    Value: 811648
+    Value: 812672
   Exists: 1
 --- !u!114 &-4373047431985020620
 MonoBehaviour:
@@ -501,6 +501,7 @@ MonoBehaviour:
   - {fileID: -8799457323249453794}
   - {fileID: 2001647780765737239}
   - {fileID: 6008662403624998471}
+  - {fileID: 1147802921657605860}
   EditorParameters:
   - {fileID: 6706793591948457397}
   - {fileID: -3260173341348727697}
@@ -509,7 +510,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 4668167717213418629}
   cacheVersion: 131860
-  cacheTime: 639206279252405977
+  cacheTime: 639206340745733440
   SerializableEventsDict:
   - key: event:/Character/dive
     index: 0
@@ -555,6 +556,8 @@ MonoBehaviour:
     index: 20
   - key: event:/UI/game_start
     index: 21
+  - key: event:/UI/hover
+    index: 22
 --- !u!114 &234045453607941794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,11 +597,38 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Character.bank
   Name: Character
   StudioPath: bank:/Character
-  lastModified: 639206183795838564
+  lastModified: 639206323655171462
   FileSizes:
   - Name: Desktop
     Value: 2232032
   Exists: 1
+--- !u!114 &1147802921657605860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/hover
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UI/hover
+  Guid:
+    Data1: 435419195
+    Data2: 1274661679
+    Data3: -1476484448
+    Data4: -1596536567
+  Banks:
+  - {fileID: -4426374613470549983}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 45
 --- !u!114 &1760225527670830489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,7 +773,7 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639206279252385391
+  lastModified: 639206340745048475
   FileSizes:
   - Name: Desktop
     Value: 5640
@@ -858,10 +888,10 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639206279252405977
+  lastModified: 639206340745063537
   FileSizes:
   - Name: Desktop
-    Value: 2344
+    Value: 2380
   Exists: 1
 --- !u!114 &5808811176326106016
 MonoBehaviour:
@@ -1075,7 +1105,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 820
+  Length: 340
 --- !u!114 &9143404910347138115
 MonoBehaviour:
   m_ObjectHideFlags: 0

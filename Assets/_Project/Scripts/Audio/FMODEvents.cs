@@ -6,13 +6,24 @@ using FMODUnity;
 public class FMODEvents : MonoBehaviour
 {
     [field: Header("Ambience")]
+    [field: SerializeField] public EventReference Storm { get; private set; }
     [field: SerializeField] public EventReference WaterAmbience { get; private set; }
 
     [field: Header("Music")]
     [field: SerializeField] public EventReference music { get; private set; }
 
     [field: Header("Player SFX")]
-    [field: SerializeField] public EventReference PlayerMovementSFX { get; private set; }
+    [field: SerializeField] public EventReference Jump { get; private set; }
+    [field: SerializeField] public EventReference Wade { get; private set; }
+    [field: SerializeField] public EventReference SwimShallow { get; private set; }
+    [field: SerializeField] public EventReference Swim { get; private set; }
+    [field: SerializeField] public EventReference DryWalk { get; private set; }
+    [field: SerializeField] public EventReference DryRun { get; private set; }
+
+    [field: Header("UI SFX")]
+    [field: SerializeField] public EventReference UIHover { get; private set; }
+    [field: SerializeField] public EventReference UIAccept { get; private set; }
+
 
     public static FMODEvents instance { get; private set; }
 

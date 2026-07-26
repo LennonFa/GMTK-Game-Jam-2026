@@ -142,6 +142,7 @@ public class PlayerWaterState : MonoBehaviour
             AudioManager.instance.SetAmbienceParameter("is_underwater", 1);
         else if(newState == WaterMovementState.Diving)
             AudioManager.instance.SetAmbienceParameter("is_underwater", 2);
+            PlayerAudioManager.instance.SwitchMovementSFX(FMODEvents.instance.Swim);
 
         CurrentState = newState;
 

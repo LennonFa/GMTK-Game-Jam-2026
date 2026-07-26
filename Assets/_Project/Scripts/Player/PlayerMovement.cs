@@ -82,6 +82,16 @@ public class PlayerMovement : MonoBehaviour
         if (Keyboard.current.aKey.isPressed)
             input.x -= 1;
 
+        if (input.x == 0 && input.y == 0 || !characterController.isGrounded)
+        {
+            PlayerAudioManager.instance.CurrentMovement.setPaused(true);
+        }
+        else
+        {
+
+            PlayerAudioManager.instance.CurrentMovement.setPaused(false);
+        }
+
        WaterMovementState waterState = playerWaterState.CurrentState;
 
        Vector3 inputDirection;
@@ -89,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
         if (waterState == WaterMovementState.Diving)
         {
             inputDirection = playerCamera.right * input.x + playerCamera.forward * input.y;
+            
         }
         else
         {
@@ -138,28 +149,33 @@ public class PlayerMovement : MonoBehaviour
         if (waterState == WaterMovementState.SurfaceSwimming)
         {
             currentSpeed = surfaceSwimSpeed;
+            PlayerAudioManager.instance.SwitchMovementSFX(FMODEvents.instance.SwimShallow);
         }
         else if (waterState == WaterMovementState.Diving)
         {
             currentSpeed = underwaterMoveSpeed;
+            PlayerAudioManager.instance.SwitchMovementSFX(FMODEvents.instance.Swim);
         }
         else if (playerCrouch.IsCrouching)
         {
             currentSpeed = crouchMoveSpeed;
+            PlayerAudioManager.instance.SwitchMovementSFX(FMODEvents.instance.DryWalk);
         }
         else if (isSprinting)
         {
             currentSpeed = sprintSpeed;
+            PlayerAudioManager.instance.SwitchMovementSFX(FMODEvents.instance.DryRun);
         }
         else
         {
             currentSpeed = moveSpeed;
+            PlayerAudioManager.instance.SwitchMovementSFX(FMODEvents.instance.DryWalk);
         }
 
         if (isWading)
         {
             float speedMultiplier = Mathf.Lerp(1f, deepWadeSpeedMultiplier, wadeAmount);
-
+            PlayerAudioManager.instance.SwitchMovementSFX(FMODEvents.instance.Wade);
             currentSpeed *= speedMultiplier;
         }
 
@@ -191,6 +207,7 @@ public class PlayerMovement : MonoBehaviour
             if (characterController.isGrounded && verticalVelocity < 0f)
             {
                 verticalVelocity = -2f;
+                
             }
 
             bool canJump = !isWading || playerWaterState.Immersion < jumpDisableImmersion;
@@ -198,6 +215,8 @@ public class PlayerMovement : MonoBehaviour
             if (characterController.isGrounded && canJump && Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.Jump, this.transform.position);
+                
             }
 
             verticalVelocity += gravity * Time.deltaTime;
@@ -224,11 +243,13 @@ public class PlayerMovement : MonoBehaviour
             float targetHeadDepth = -surfaceHeadHeight;
             float depthError = playerWaterState.HeadDepth - targetHeadDepth;
 
+            
             targetVerticalVelocity = Mathf.Clamp(depthError *surfaceBuoyancyStrength, -maxSwimVerticalSpeed, maxSwimVerticalSpeed);
         }
         else
         {
             float verticalInput = waterState == WaterMovementState.Diving || wantsToLookDive ? diveLookVerticalInput : 0f;
+            
 
             if (wantsToRise)
                 verticalInput += 1f;

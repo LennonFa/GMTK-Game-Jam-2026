@@ -906,6 +906,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce4e122525fc354d8a4f6a7a2194b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FMODEvents
+  <Storm>k__BackingField:
+    Guid:
+      Data1: -161063944
+      Data2: 1089629514
+      Data3: -1105391960
+      Data4: 1560201317
+    Path: event:/Environment/stormy_seas
   <WaterAmbience>k__BackingField:
     Guid:
       Data1: -1361863282
@@ -920,13 +927,62 @@ MonoBehaviour:
       Data3: -1998620496
       Data4: 821383887
     Path: event:/Music/Zone 1
-  <PlayerMovementSFX>k__BackingField:
+  <Jump>k__BackingField:
+    Guid:
+      Data1: -140211390
+      Data2: 1181965668
+      Data3: 578110636
+      Data4: -66320251
+    Path: event:/Character/jump
+  <Wade>k__BackingField:
+    Guid:
+      Data1: 250743157
+      Data2: 1275753637
+      Data3: -37357678
+      Data4: -837032232
+    Path: event:/Character/wade
+  <SwimShallow>k__BackingField:
+    Guid:
+      Data1: 541675639
+      Data2: 1123637507
+      Data3: -1264588627
+      Data4: 368890048
+    Path: event:/Character/swim_surface
+  <Swim>k__BackingField:
+    Guid:
+      Data1: -569436703
+      Data2: 1241409929
+      Data3: 107444877
+      Data4: -1081587842
+    Path: event:/Character/swim_underwater
+  <DryWalk>k__BackingField:
     Guid:
       Data1: -1162311129
       Data2: 1305076184
       Data3: 641621145
       Data4: -549153729
     Path: event:/Character/walk_metal
+  <DryRun>k__BackingField:
+    Guid:
+      Data1: 531625629
+      Data2: 1097350018
+      Data3: 671401148
+      Data4: 2019429964
+    Path: event:/Character/run_metal
+  <UIHover>k__BackingField:
+    Guid:
+      Data1: 435419195
+      Data2: 1274661679
+      Data3: -1476484448
+      Data4: -1596536567
+    Path: event:/UI/hover
+  <UIAccept>k__BackingField:
+    Guid:
+      Data1: -793600111
+      Data2: 1340058680
+      Data3: 1427668907
+      Data4: 1360692852
+    Path: event:/UI/navigate
 --- !u!1 &1051677453
 GameObject:
   m_ObjectHideFlags: 0

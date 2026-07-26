@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Survivor : MonoBehaviour, IInteractable, IHoldable
 {
-    private bool isRescued;
-    private bool isHeld;
+    public bool isRescued;
+    public bool isHeld;
 
     private Vector3 velocity;
 

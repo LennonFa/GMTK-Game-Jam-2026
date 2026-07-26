@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 070e2134b7fe3474e9d538d0aaf95544
+guid: 6ebbcd74257671447a5146a5cf3b53f4
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
@@ -32,11 +32,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: terrifiedClip
+      name: Guy1Sitting
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 600
+      lastFrame: 66
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

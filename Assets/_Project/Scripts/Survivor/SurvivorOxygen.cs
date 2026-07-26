@@ -1,20 +1,22 @@
 using System;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 [RequireComponent(typeof(Collider))]
 public class SurvivorOxygen : MonoBehaviour
 {
+    private static readonly int IsTreading = Animator.StringToHash("isTreading");
     public bool Drowned { get; private set; }
 
     [SerializeField] private float maxHoldBreathSeconds = 3;
     [SerializeField] private float submergeHeight = 0;
     private Vector3 SubmergePosition => transform.position + new Vector3(0, submergeHeight, 0);
 
-    private float currentHoldBreathSeconds;
-    private Collider myCollider;
-    private bool waterborne;
-    private bool submerged;
     private WaterVolume contactedWaterVolume;
+
+    private float currentHoldBreathSeconds;
+
+    public bool submerged;
 
     #region Editorstuff
 
@@ -25,11 +27,6 @@ public class SurvivorOxygen : MonoBehaviour
     }
 
     #endregion
-
-    private void Awake()
-    {
-        myCollider = GetComponent<Collider>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -54,7 +51,6 @@ public class SurvivorOxygen : MonoBehaviour
         if (contactedWaterVolume)
         {
             submerged = SubmergePosition.y < contactedWaterVolume.GetSurface().position.y;
-            waterborne = true;
         }
 
         if (submerged)
@@ -75,7 +71,7 @@ public class SurvivorOxygen : MonoBehaviour
 
     void Drown()
     {
-        Debug.Log($"{name} drowned!");
-        Destroy(gameObject);
+        Drowned = true;
     }
+
 }

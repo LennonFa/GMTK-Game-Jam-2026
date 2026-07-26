@@ -329,7 +329,7 @@ MonoBehaviour:
     data1: 3159839109
     data2: 2452753414
   Type: 2
-  IsGlobal: 1
+  IsGlobal: 0
   Labels:
   - Init
   - No
@@ -504,13 +504,12 @@ MonoBehaviour:
   EditorParameters:
   - {fileID: 6706793591948457397}
   - {fileID: -3260173341348727697}
-  - {fileID: 7310047125979250989}
   MasterBanks:
   - {fileID: 3000914612150529139}
   StringsBanks:
   - {fileID: 4668167717213418629}
   cacheVersion: 131860
-  cacheTime: 639206183849031956
+  cacheTime: 639206279252405977
   SerializableEventsDict:
   - key: event:/Character/dive
     index: 0
@@ -744,10 +743,10 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639206183820675839
+  lastModified: 639206279252385391
   FileSizes:
   - Name: Desktop
-    Value: 5818
+    Value: 5640
   Exists: 1
 --- !u!114 &3642613235856824763
 MonoBehaviour:
@@ -859,7 +858,7 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639206183820689957
+  lastModified: 639206279252405977
   FileSizes:
   - Name: Desktop
     Value: 2344
@@ -1023,33 +1022,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 100
---- !u!114 &7310047125979250989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/is_underwater
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: is_underwater
-  StudioPath: parameter:/is_underwater
-  Min: 0
-  Max: 2
-  Default: 0
-  ID:
-    data1: 3159839109
-    data2: 2452753414
-  Type: 2
-  IsGlobal: 1
-  Labels:
-  - Init
-  - No
-  - Yes
-  Exists: 1
 --- !u!114 &7547421051037138002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1119,10 +1091,10 @@ MonoBehaviour:
   Path: Assets/_Project/Audio/FMOD Built Banks/Desktop/Environment.bank
   Name: Environment
   StudioPath: bank:/Environment
-  lastModified: 639206183820591766
+  lastModified: 639206279252294145
   FileSizes:
   - Name: Desktop
-    Value: 8071328
+    Value: 8071264
   Exists: 1
 --- !u!114 &9169002090592118143
 MonoBehaviour:

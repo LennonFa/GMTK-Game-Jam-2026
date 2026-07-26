@@ -906,41 +906,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce4e122525fc354d8a4f6a7a2194b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FMODEvents
-  <ambience>k__BackingField:
+  <WaterAmbience>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1361863282
+      Data2: 1105122130
+      Data3: 333700506
+      Data4: -1054301283
+    Path: event:/Environment/underwater
   <music>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <playerFootsteps>k__BackingField:
+      Data1: 1922340774
+      Data2: 1307568074
+      Data3: -1998620496
+      Data4: 821383887
+    Path: event:/Music/Zone 1
+  <PlayerMovementSFX>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <coinCollected>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <coinIdle>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1162311129
+      Data2: 1305076184
+      Data3: 641621145
+      Data4: -549153729
+    Path: event:/Character/walk_metal
 --- !u!1 &1051677453
 GameObject:
   m_ObjectHideFlags: 0

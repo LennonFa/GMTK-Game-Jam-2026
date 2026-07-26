@@ -5604,6 +5604,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6914653997578860242, guid: ed0c85d5bb6327d43a4ed7279da30e33, type: 3}
+      propertyPath: systemsToDisable.Array.size
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

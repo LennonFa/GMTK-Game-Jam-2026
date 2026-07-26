@@ -13,11 +13,13 @@ public class ShipSinker : MonoBehaviour
     /// </summary>
     [SerializeField] private float slowSinkingSpeed;
 
+    public bool HasFinishedMainSink => currentSinkTime >= timeToSink;
     private float Progress => currentSinkTime / timeToSink;
     private Vector3 startPosition;
     private Quaternion startRotation;
     private Vector3 targetPosition;
     private float currentSinkTime;
+    
 
     /// <summary>
     /// uncapped sinking for the end of the lerp

@@ -38,6 +38,7 @@ public class ShipSinker : MonoBehaviour
     void Update()
     {
         currentSinkTime += Time.deltaTime;
+        AudioManager.instance.SetMusicParam(Time.deltaTime/4);
         if (currentSinkTime > timeToSink)
         {
             currentSinkTime = timeToSink;

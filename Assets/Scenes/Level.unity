@@ -1120,6 +1120,20 @@ MonoBehaviour:
       Data3: 1427668907
       Data4: 1360692852
     Path: event:/UI/navigate
+  <Pause>k__BackingField:
+    Guid:
+      Data1: 1497491549
+      Data2: 1083457071
+      Data3: 488920463
+      Data4: 1469149469
+    Path: event:/UI/book_flip
+  <Unpause>k__BackingField:
+    Guid:
+      Data1: 776234608
+      Data2: 1224161499
+      Data3: -1891930453
+      Data4: 2019221690
+    Path: event:/UI/book_close
 --- !u!1001 &973849377
 PrefabInstance:
   m_ObjectHideFlags: 0

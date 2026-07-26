@@ -54,11 +54,13 @@ public class PlayerPause : MonoBehaviour
     {
         if (isPaused)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.Pause, this.transform.position);
             Pause();
         }
         else
         {
             UnPause();
+            
         }
     }
 
@@ -132,12 +134,17 @@ public class PlayerPause : MonoBehaviour
 
     void Resume()
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.UIAccept, this.transform.position);
         isPaused = false;
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.Unpause, this.transform.position);
         UnPause();
     }
 
     void Restart()
     {
+        // modify this into something robust later
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.UIAccept, this.transform.position);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         isPaused = false;
         Time.timeScale = 1f;
 
@@ -149,10 +156,11 @@ public class PlayerPause : MonoBehaviour
 
     void Quit()
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.UIAccept, this.transform.position);
         //modify into something robust later
         #if UNITY_EDITOR
-                // Stops Play Mode inside the Unity Editor
-                UnityEditor.EditorApplication.isPlaying = false;
+        // Stops Play Mode inside the Unity Editor
+        UnityEditor.EditorApplication.isPlaying = false;
         #else
                     // Closes the standalone application build
                     // Application.Quit();
